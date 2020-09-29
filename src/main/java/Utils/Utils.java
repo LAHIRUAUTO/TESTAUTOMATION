@@ -38,10 +38,10 @@ public class Utils {
         // Create Object of ChromeOption Class
         ChromeOptions option=new ChromeOptions();
 
-        //Set the setHeadless is equal to true which will run test in Headless mode
-        option.setHeadless(true);
+        //add the –headless argument in option class which will run test in Headless mode
+        option.addArguments("–headless");
 
-        driver = new ChromeDriver();
+        driver = new ChromeDriver(option);
         driver.get("https://dcsqa.avtra.com/dcs/#/login/en/IR");
         driver.manage().window().maximize();
     }
