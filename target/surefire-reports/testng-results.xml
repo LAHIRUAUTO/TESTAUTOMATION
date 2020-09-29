@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2020-09-28T18:22:41Z" name="Surefire suite" finished-at="2020-09-28T18:22:48Z" duration-ms="7514">
+    <groups>
+    </groups>
+    <test started-at="2020-09-28T18:22:41Z" name="Surefire test" finished-at="2020-09-28T18:22:48Z" duration-ms="7514">
+      <class name="TestRunner">
+        <test-method is-config="true" signature="Intialize()[pri:0, instance:TestRunner@4b53f538]" started-at="2020-09-28T18:22:16Z" name="Intialize" finished-at="2020-09-28T18:22:40Z" duration-ms="24380" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Intialize -->
+        <test-method is-config="true" signature="startTest()[pri:0, instance:TestRunner@4b53f538]" started-at="2020-09-28T18:22:40Z" name="startTest" finished-at="2020-09-28T18:22:41Z" depends-on-methods="Utils.Utils.Intialize" duration-ms="589" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startTest -->
+        <test-method signature="LogInToTheDCS()[pri:1, instance:TestRunner@4b53f538]" started-at="2020-09-28T18:22:41Z" name="LogInToTheDCS" finished-at="2020-09-28T18:22:42Z" duration-ms="676" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LogInToTheDCS -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:TestRunner@4b53f538]" started-at="2020-09-28T18:22:42Z" name="tearDown" finished-at="2020-09-28T18:22:43Z" duration-ms="1490" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=LogInToTheDCS status=SUCCESS method=TestRunner.LogInToTheDCS()[pri:1, instance:TestRunner@4b53f538] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="GotoDashBoard()[pri:2, instance:TestRunner@4b53f538]" started-at="2020-09-28T18:22:43Z" name="GotoDashBoard" finished-at="2020-09-28T18:22:45Z" duration-ms="2065" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- GotoDashBoard -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:TestRunner@4b53f538]" started-at="2020-09-28T18:22:45Z" name="tearDown" finished-at="2020-09-28T18:22:46Z" duration-ms="519" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=GotoDashBoard status=SUCCESS method=TestRunner.GotoDashBoard()[pri:2, instance:TestRunner@4b53f538] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="goToFlights()[pri:3, instance:TestRunner@4b53f538]" started-at="2020-09-28T18:22:46Z" name="goToFlights" finished-at="2020-09-28T18:22:48Z" duration-ms="2255" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- goToFlights -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:TestRunner@4b53f538]" started-at="2020-09-28T18:22:48Z" name="tearDown" finished-at="2020-09-28T18:22:48Z" duration-ms="238" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=goToFlights status=SUCCESS method=TestRunner.goToFlights()[pri:3, instance:TestRunner@4b53f538] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="endTest()[pri:0, instance:TestRunner@4b53f538]" started-at="2020-09-28T18:22:48Z" name="endTest" finished-at="2020-09-28T18:22:48Z" duration-ms="234" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- endTest -->
+        <test-method is-config="true" signature="endSuite()[pri:0, instance:TestRunner@4b53f538]" started-at="2020-09-28T18:22:48Z" name="endSuite" finished-at="2020-09-28T18:22:48Z" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- endSuite -->
+        <test-method is-config="true" signature="close()[pri:0, instance:TestRunner@4b53f538]" started-at="2020-09-28T18:22:49Z" name="close" finished-at="2020-09-28T18:22:49Z" duration-ms="184" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- close -->
+      </class> <!-- TestRunner -->
+    </test> <!-- Surefire test -->
+  </suite> <!-- Surefire suite -->
+</testng-results>
