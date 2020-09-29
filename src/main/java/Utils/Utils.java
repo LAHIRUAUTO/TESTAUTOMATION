@@ -39,7 +39,7 @@ public class Utils {
         ChromeOptions option=new ChromeOptions();
 
         //add the –headless argument in option class which will run test in Headless mode
-        option.addArguments("–headless");
+        option.setHeadless(true);
 
         driver = new ChromeDriver(option);
         driver.get("https://dcsqa.avtra.com/dcs/#/login/en/IR");
