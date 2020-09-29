@@ -162,6 +162,23 @@
             <version>1.2.0</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.qspin.qtaste.plugin</groupId>
+            <artifactId>sikuli</artifactId>
+            <version>3.0.0</version>
+        </dependency>
+        <!-- Thanks for using https://jar-download.com -->
+
+        <dependency>
+            <groupId>com.github.dine11101</groupId>
+            <artifactId>sikuli</artifactId>
+            <version>0.0.2</version>
+        </dependency>
+        <!-- Thanks for using https://jar-download.com -->
+
+
+
+
 
 
 
