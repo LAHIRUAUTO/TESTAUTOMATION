@@ -48,6 +48,7 @@ public class TestRunner extends Utils {
         newloginpage.enterPassword("1Slite0614");
         newloginpage.clicklogInButton();
         System.out.println("Git Change Test");
+        System.out.println("Git Change Test 2");
 
 
 
