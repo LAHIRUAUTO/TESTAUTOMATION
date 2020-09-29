@@ -35,10 +35,12 @@ public class Utils {
 
 
         System.setProperty("webdriver.gecko.driver", "/home/user/Desktop/Sample_Structure_Test_Automation_Project with Page Factory/resouces/chromedriver_linux64");
+
+        //Enable headless browser testing
         // Create Object of ChromeOption Class
         ChromeOptions option=new ChromeOptions();
 
-        //add the –headless argument in option class which will run test in Headless mode
+        //Set the setHeadless is equal to true which will run test in Headless mode
         option.setHeadless(true);
 
         driver = new ChromeDriver(option);
