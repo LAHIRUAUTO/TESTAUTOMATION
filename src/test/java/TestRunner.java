@@ -10,7 +10,10 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.ITestResult;
-import org.testng.annotations.*;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.Test;
 
 import javax.mail.MessagingException;
 import java.io.File;
@@ -44,6 +47,7 @@ public class TestRunner extends Utils {
         newloginpage.enterUsername("SYSTEM");
         newloginpage.enterPassword("1Slite0614");
         newloginpage.clicklogInButton();
+        System.out.println("Git Change Test");
 
 
 
