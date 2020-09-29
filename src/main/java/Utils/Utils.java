@@ -5,6 +5,7 @@ import com.relevantcodes.extentreports.ExtentTest;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
@@ -21,6 +22,9 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Properties;
 
+//import org.openqa.selenium.*;
+
+
 
 public class Utils {
     public static WebDriver driver;
@@ -28,7 +32,15 @@ public class Utils {
     static ExtentReports report;
     @BeforeSuite
     public static void Intialize () {
+
+
         System.setProperty("webdriver.gecko.driver", "/home/user/Desktop/Sample_Structure_Test_Automation_Project with Page Factory/resouces/chromedriver_linux64");
+        // Create Object of ChromeOption Class
+        ChromeOptions option=new ChromeOptions();
+
+        //Set the setHeadless is equal to true which will run test in Headless mode
+        option.setHeadless(true);
+
         driver = new ChromeDriver();
         driver.get("https://dcsqa.avtra.com/dcs/#/login/en/IR");
         driver.manage().window().maximize();

@@ -35,6 +35,7 @@ public class TestRunner extends Utils {
     }
 
 
+
     @BeforeSuite
     public static void startTest() {
         report = new ExtentReports(System.getProperty("user.dir") + "/Test_Result.html", true);
