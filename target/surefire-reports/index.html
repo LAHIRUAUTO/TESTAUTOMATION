@@ -91,7 +91,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">3 methods,   3 passed</span>
+                    <span class="method-stats">4 methods,   4 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -103,6 +103,11 @@
                       <span>
                         <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Surefire_suite" title="TestRunner" class="method navigator-link" hash-for-method="GotoDashBoard">GotoDashBoard</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Surefire_suite" title="TestRunner" class="method navigator-link" hash-for-method="GotoMainMenu">GotoMainMenu</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -138,6 +143,13 @@
                   <a name="GotoDashBoard">
                   </a> <!-- GotoDashBoard -->
                   <span class="method-name">GotoDashBoard</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="GotoMainMenu">
+                  </a> <!-- GotoMainMenu -->
+                  <span class="method-name">GotoMainMenu</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
@@ -207,24 +219,28 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(3);
+data.addRows(4);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'goToFlights')
 data.setCell(0, 2, 'TestRunner')
-data.setCell(0, 3, 2289);
+data.setCell(0, 3, 2271);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'GotoDashBoard')
+data.setCell(1, 1, 'GotoMainMenu')
 data.setCell(1, 2, 'TestRunner')
-data.setCell(1, 3, 2099);
+data.setCell(1, 3, 2088);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'LogInToTheDCS')
+data.setCell(2, 1, 'GotoDashBoard')
 data.setCell(2, 2, 'TestRunner')
-data.setCell(2, 3, 542);
+data.setCell(2, 3, 2046);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'LogInToTheDCS')
+data.setCell(3, 2, 'TestRunner')
+data.setCell(3, 3, 398);
 window.suiteTableData['Surefire_suite']= { tableData: data, tableDiv: 'times-div-Surefire_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 4 seconds</span>
+              <span class="suite-total-time">Total running time: 6 seconds</span>
               <div id="times-div-Surefire_suite">
               </div> <!-- times-div-Surefire_suite -->
             </div> <!-- times-div -->
@@ -257,43 +273,51 @@ return data;
               </div> <!-- configuration-suite before -->
               <div class="configuration-suite before">
                 <span class="method-name">startTest</span>
-                <span class="method-start">16249 ms</span>
+                <span class="method-start">13028 ms</span>
               </div> <!-- configuration-suite before -->
               <div class="test-method">
                 <span class="method-name">LogInToTheDCS</span>
-                <span class="method-start">17190 ms</span>
+                <span class="method-start">13965 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown([TestResult name=LogInToTheDCS status=SUCCESS method=TestRunner.LogInToTheDCS()[pri:1, instance:Test...)</span>
-                <span class="method-start">17733 ms</span>
+                <span class="method-start">14364 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">GotoDashBoard</span>
-                <span class="method-start">18169 ms</span>
+                <span class="method-start">14707 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown([TestResult name=GotoDashBoard status=SUCCESS method=TestRunner.GotoDashBoard()[pri:2, instance:Test...)</span>
-                <span class="method-start">20268 ms</span>
+                <span class="method-start">16753 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">GotoMainMenu</span>
+                <span class="method-start">16864 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown([TestResult name=GotoMainMenu status=SUCCESS method=TestRunner.GotoMainMenu()[pri:3, instance:TestRu...)</span>
+                <span class="method-start">18952 ms</span>
               </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">goToFlights</span>
-                <span class="method-start">20976 ms</span>
+                <span class="method-start">19089 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">tearDown([TestResult name=goToFlights status=SUCCESS method=TestRunner.goToFlights()[pri:3, instance:TestRunn...)</span>
-                <span class="method-start">23265 ms</span>
+                <span class="method-name">tearDown([TestResult name=goToFlights status=SUCCESS method=TestRunner.goToFlights()[pri:4, instance:TestRunn...)</span>
+                <span class="method-start">21360 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-class after">
-                <span class="method-name">endSuite</span>
-                <span class="method-start">23393 ms</span>
-              </div> <!-- configuration-class after -->
-              <div class="configuration-class after">
                 <span class="method-name">endTest</span>
-                <span class="method-start">23394 ms</span>
+                <span class="method-start">21461 ms</span>
               </div> <!-- configuration-class after -->
               <div class="configuration-suite after">
+                <span class="method-name">endSuite</span>
+                <span class="method-start">21809 ms</span>
+              </div> <!-- configuration-suite after -->
+              <div class="configuration-suite after">
                 <span class="method-name">close</span>
-                <span class="method-start">23814 ms</span>
+                <span class="method-start">21810 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

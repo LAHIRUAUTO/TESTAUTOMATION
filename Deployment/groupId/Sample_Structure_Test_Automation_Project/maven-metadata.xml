@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>groupId</groupId>
+  <artifactId>Sample_Structure_Test_Automation_Project</artifactId>
+  <versioning>
+    <versions>
+      <version>1.0-SNAPSHOT</version>
+    </versions>
+    <lastUpdated>20200930112839</lastUpdated>
+  </versioning>
+</metadata>

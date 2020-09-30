@@ -40,7 +40,6 @@
     <orderEntry type="library" scope="RUNTIME" name="Maven: jdom:jdom:1.0" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: de.zeigermann.xml:xml-im-exporter:1.1" level="project" />
     <orderEntry type="library" name="Maven: org.apache.maven:maven-profile:2.0.9" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.maven:maven-model:2.0.9" level="project" />
     <orderEntry type="library" name="Maven: org.apache.maven.wagon:wagon-provider-api:1.0-beta-2" level="project" />
     <orderEntry type="library" name="Maven: org.apache.maven:maven-repository-metadata:2.0.9" level="project" />
     <orderEntry type="library" name="Maven: org.apache.maven:maven-error-diagnostics:2.0.9" level="project" />
@@ -156,5 +155,7 @@
     <orderEntry type="library" name="Maven: org.seleniumhq.selenium:selenium-safari-driver:2.44.0" level="project" />
     <orderEntry type="library" name="Maven: org.webbitserver:webbit:0.4.14" level="project" />
     <orderEntry type="library" name="Maven: io.netty:netty:3.5.2.Final" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.maven.plugins:maven-deploy-plugin:2.7" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.maven:maven-model:2.0.6" level="project" />
   </component>
 </module>

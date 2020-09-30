@@ -11,15 +11,11 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.ITestResult;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 import javax.mail.MessagingException;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.IOException;
 
 /*import org.junit.AfterClass;
 import org.junit.Assert;
@@ -44,13 +40,12 @@ public class TestRunner extends Utils {
     }
 
     @Test(priority = 1)
-    public void LogInToTheDCS() throws IOException, InterruptedException {
+    public void LogInToTheDCS() {
         LoginPage newloginpage = PageFactory.initElements(driver, LoginPage.class);
         newloginpage.enterUsername("SYSTEM");
         newloginpage.enterPassword("1Slite0614");
         newloginpage.clicklogInButton();
-        System.out.println("Git Change Test");
-        System.out.println("Git Change Test 2");
+
 
 
 
@@ -101,7 +96,7 @@ public class TestRunner extends Utils {
 
                 FileUtils.copyFile(source, new File("/home/user/Desktop/Sample_Structure_Test_Automation_Project with Page Factory/Failure_Screen_Capture/" + result.getName() + ".png"));
 
-                System.out.println("Screenshot taken");
+                System.out.println("Test Failed Screenshot taken " +  result.getName());
             } catch (Exception e) {
 
                 System.out.println("Exception while taking screenshot " + e.getMessage());
@@ -119,7 +114,7 @@ public class TestRunner extends Utils {
 
                 FileUtils.copyFile(source, new File("/home/user/Desktop/Sample_Structure_Test_Automation_Project with Page Factory/Success_Screen_Capture/" + result.getName() + ".png"));
 
-                System.out.println("Screenshot taken");
+                System.out.println("Test Passed Screenshot taken " +  result.getName());
             } catch (Exception e) {
 
                 System.out.println("Exception while taking screenshot " + e.getMessage());
@@ -136,7 +131,7 @@ public class TestRunner extends Utils {
         }
 
 
-        @AfterClass
+        @AfterSuite
         public static void endSuite () throws MessagingException {
 
             //Utils.sendEmail("proavostest@gmail.com", "vikasithasouth@gmail.com", "Test Email Attachment", "Test Email Attachment");

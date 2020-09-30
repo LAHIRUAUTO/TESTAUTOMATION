@@ -227,8 +227,6 @@
 
 
         </plugins>
-        <defaultGoal>install</defaultGoal>
-
     </build>
 
     <properties>
