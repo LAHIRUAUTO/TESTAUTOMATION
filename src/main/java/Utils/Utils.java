@@ -43,6 +43,7 @@ public class Utils {
         //Set the setHeadless is equal to true which will run test in Headless mode
         option.setHeadless(true);
 
+
         driver = new ChromeDriver(option);
         driver.get("https://dcsqa.avtra.com/dcs/#/login/en/IR");
         driver.manage().window().maximize();

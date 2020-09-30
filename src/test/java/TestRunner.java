@@ -1,3 +1,4 @@
+import Pages.DcsHome.DcsDashBoard;
 import Pages.Flights.Flights;
 import Pages.HomePage.LoginPage;
 import Pages.MainMenu.MainMenu;
@@ -56,7 +57,16 @@ public class TestRunner extends Utils {
     }
 
     @Test(priority = 2)
-    public void GotoDashBoard() throws InterruptedException {
+    public void GotoDashBoard () throws InterruptedException {
+        DcsDashBoard newDashBoard = PageFactory.initElements(driver, DcsDashBoard.class);
+        Thread.sleep(2000);
+        newDashBoard.checkDashBoardtitle();
+    }
+
+
+
+    @Test(priority = 3)
+    public void GotoMainMenu() throws InterruptedException {
 
         MainMenu newMainMenu = PageFactory.initElements(driver, MainMenu.class);
         Thread.sleep(2000);
@@ -65,7 +75,7 @@ public class TestRunner extends Utils {
 
     }
 
-    @Test(priority = 3)
+    @Test(priority = 4)
 
     public void goToFlights() throws InterruptedException {
 
