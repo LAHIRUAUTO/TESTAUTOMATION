@@ -2,24 +2,24 @@
 <testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2020-09-30T13:41:16Z" name="Surefire suite" finished-at="2020-09-30T13:42:04Z" duration-ms="47926">
+  <suite started-at="2020-09-30T16:57:39Z" name="Surefire suite" finished-at="2020-09-30T16:57:46Z" duration-ms="7504">
     <groups>
     </groups>
-    <test started-at="2020-09-30T13:41:16Z" name="Surefire test" finished-at="2020-09-30T13:42:04Z" duration-ms="47926">
+    <test started-at="2020-09-30T16:57:39Z" name="Surefire test" finished-at="2020-09-30T16:57:46Z" duration-ms="7504">
       <class name="TestRunner">
-        <test-method is-config="true" signature="Intialize()[pri:0, instance:TestRunner@76329302]" started-at="2020-09-30T13:40:35Z" name="Intialize" finished-at="2020-09-30T13:41:11Z" duration-ms="36799" status="PASS">
+        <test-method is-config="true" signature="Intialize()[pri:0, instance:TestRunner@76329302]" started-at="2020-09-30T16:57:11Z" name="Intialize" finished-at="2020-09-30T16:57:38Z" duration-ms="26867" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Intialize -->
-        <test-method is-config="true" signature="startTest()[pri:0, instance:TestRunner@76329302]" started-at="2020-09-30T13:41:11Z" name="startTest" finished-at="2020-09-30T13:41:16Z" depends-on-methods="Utils.Utils.Intialize" duration-ms="4309" status="PASS">
+        <test-method is-config="true" signature="startTest()[pri:0, instance:TestRunner@76329302]" started-at="2020-09-30T16:57:38Z" name="startTest" finished-at="2020-09-30T16:57:39Z" depends-on-methods="Utils.Utils.Intialize" duration-ms="677" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- startTest -->
-        <test-method signature="LogInToTheDCS()[pri:1, instance:TestRunner@76329302]" started-at="2020-09-30T13:41:16Z" name="LogInToTheDCS" finished-at="2020-09-30T13:41:30Z" duration-ms="13855" status="PASS">
+        <test-method signature="LogInToTheDCS()[pri:1, instance:TestRunner@76329302]" started-at="2020-09-30T16:57:39Z" name="LogInToTheDCS" finished-at="2020-09-30T16:57:39Z" duration-ms="357" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- LogInToTheDCS -->
-        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:TestRunner@76329302]" started-at="2020-09-30T13:41:30Z" name="tearDown" finished-at="2020-09-30T13:41:38Z" duration-ms="8136" status="PASS">
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:TestRunner@76329302]" started-at="2020-09-30T16:57:39Z" name="tearDown" finished-at="2020-09-30T16:57:39Z" duration-ms="197" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -30,11 +30,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method signature="GotoDashBoard()[pri:2, instance:TestRunner@76329302]" started-at="2020-09-30T13:41:38Z" name="GotoDashBoard" finished-at="2020-09-30T13:41:41Z" duration-ms="2956" status="PASS">
+        <test-method signature="GotoDashBoard()[pri:2, instance:TestRunner@76329302]" started-at="2020-09-30T16:57:39Z" name="GotoDashBoard" finished-at="2020-09-30T16:57:41Z" duration-ms="2079" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GotoDashBoard -->
-        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:TestRunner@76329302]" started-at="2020-09-30T13:41:41Z" name="tearDown" finished-at="2020-09-30T13:41:42Z" duration-ms="856" status="PASS">
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:TestRunner@76329302]" started-at="2020-09-30T16:57:41Z" name="tearDown" finished-at="2020-09-30T16:57:41Z" duration-ms="100" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -45,11 +45,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method signature="GotoMainMenu()[pri:3, instance:TestRunner@76329302]" started-at="2020-09-30T13:41:42Z" name="GotoMainMenu" finished-at="2020-09-30T13:41:46Z" duration-ms="4025" status="PASS">
+        <test-method signature="GotoMainMenu()[pri:3, instance:TestRunner@76329302]" started-at="2020-09-30T16:57:41Z" name="GotoMainMenu" finished-at="2020-09-30T16:57:44Z" duration-ms="2074" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- GotoMainMenu -->
-        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:TestRunner@76329302]" started-at="2020-09-30T13:41:46Z" name="tearDown" finished-at="2020-09-30T13:41:47Z" duration-ms="880" status="PASS">
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:TestRunner@76329302]" started-at="2020-09-30T16:57:44Z" name="tearDown" finished-at="2020-09-30T16:57:44Z" duration-ms="105" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -60,11 +60,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method signature="goToFlights()[pri:4, instance:TestRunner@76329302]" started-at="2020-09-30T13:41:47Z" name="goToFlights" finished-at="2020-09-30T13:41:52Z" duration-ms="5520" status="PASS">
+        <test-method signature="goToFlights()[pri:4, instance:TestRunner@76329302]" started-at="2020-09-30T16:57:44Z" name="goToFlights" finished-at="2020-09-30T16:57:46Z" duration-ms="2278" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- goToFlights -->
-        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:TestRunner@76329302]" started-at="2020-09-30T13:41:52Z" name="tearDown" finished-at="2020-09-30T13:42:01Z" duration-ms="9262" status="PASS">
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:TestRunner@76329302]" started-at="2020-09-30T16:57:46Z" name="tearDown" finished-at="2020-09-30T16:57:46Z" duration-ms="93" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -75,15 +75,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="endTest()[pri:0, instance:TestRunner@76329302]" started-at="2020-09-30T13:42:02Z" name="endTest" finished-at="2020-09-30T13:42:04Z" duration-ms="2151" status="PASS">
+        <test-method is-config="true" signature="endTest()[pri:0, instance:TestRunner@76329302]" started-at="2020-09-30T16:57:46Z" name="endTest" finished-at="2020-09-30T16:57:46Z" duration-ms="204" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- endTest -->
-        <test-method is-config="true" signature="endSuite()[pri:0, instance:TestRunner@76329302]" started-at="2020-09-30T13:42:05Z" name="endSuite" finished-at="2020-09-30T13:42:05Z" duration-ms="6" status="PASS">
+        <test-method is-config="true" signature="endSuite()[pri:0, instance:TestRunner@76329302]" started-at="2020-09-30T16:57:46Z" name="endSuite" finished-at="2020-09-30T16:57:46Z" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- endSuite -->
-        <test-method is-config="true" signature="close()[pri:0, instance:TestRunner@76329302]" started-at="2020-09-30T13:42:05Z" name="close" finished-at="2020-09-30T13:42:06Z" depends-on-methods="TestRunner.endSuite" duration-ms="1067" status="PASS">
+        <test-method is-config="true" signature="close()[pri:0, instance:TestRunner@76329302]" started-at="2020-09-30T16:57:46Z" name="close" finished-at="2020-09-30T16:57:46Z" depends-on-methods="TestRunner.endSuite" duration-ms="115" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- close -->
