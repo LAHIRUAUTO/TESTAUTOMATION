@@ -7,6 +7,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class MainMenuObject extends Utils {
 
+
     @FindBy(xpath="/html/body/app-root/div/pl-top-menu/nav/span\n")
     @CacheLookup
     WebElement mainMenuButton;

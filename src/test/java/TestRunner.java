@@ -16,6 +16,7 @@ import org.testng.annotations.*;
 import javax.mail.MessagingException;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.concurrent.TimeUnit;
 
 /*import org.junit.AfterClass;
 import org.junit.Assert;
@@ -37,6 +38,12 @@ public class TestRunner extends Utils {
     public static void startTest() {
         report = new ExtentReports(System.getProperty("user.dir") + "/Test_Result.html", true);
         test = report.startTest("Test Result");
+
+    }
+
+    @BeforeMethod
+    public static void implicitWait (){
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 
     @Test(priority = 1)
