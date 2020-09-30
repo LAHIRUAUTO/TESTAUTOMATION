@@ -3,6 +3,7 @@
 <suite name="Suite1">
     <test verbose="2" preserve-order="true" name= "Suit1">
         <classes>
+            <!--<class name="CheckInFlowRunner"/>-->
             <class name="TestRunner"/>
         </classes>
     </test> <!-- Test -->

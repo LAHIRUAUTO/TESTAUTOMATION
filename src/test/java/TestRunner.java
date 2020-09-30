@@ -45,32 +45,18 @@ public class TestRunner extends Utils {
         newloginpage.enterUsername("SYSTEM");
         newloginpage.enterPassword("1Slite0614");
         newloginpage.clicklogInButton();
-
-
-
-
     }
 
-    @Test(priority = 2)
-    public void GotoDashBoard () throws InterruptedException {
-        DcsDashBoard newDashBoard = PageFactory.initElements(driver, DcsDashBoard.class);
-        Thread.sleep(2000);
-        newDashBoard.checkDashBoardtitle();
-    }
-
-
-
-    @Test(priority = 3)
+    @Test(dependsOnMethods = {"LogInToTheDCS"}, priority = 2)
     public void GotoMainMenu() throws InterruptedException {
 
         MainMenu newMainMenu = PageFactory.initElements(driver, MainMenu.class);
         Thread.sleep(2000);
         newMainMenu.clickMainMenuLink();
 
-
     }
 
-    @Test(priority = 4)
+    @Test(dependsOnMethods = {"LogInToTheDCS", "GotoMainMenu"}, priority = 3)
 
     public void goToFlights() throws InterruptedException {
 
@@ -80,6 +66,15 @@ public class TestRunner extends Utils {
         Thread.sleep(1000);
         newFlight.clickFlight();
 
+    }
+
+    @Test(dependsOnMethods = {"LogInToTheDCS"}, priority = 4)
+    public void GotoDashBoard () throws InterruptedException {
+        DcsDashBoard newDashBoard = PageFactory.initElements(driver, DcsDashBoard.class);
+        Thread.sleep(2000);
+        newDashBoard.clickDashBoard();
+        newDashBoard.checkDashBoardtitle();
+        newDashBoard.loadCheckInFlight();
     }
 
     @AfterMethod
@@ -115,6 +110,23 @@ public class TestRunner extends Utils {
                 FileUtils.copyFile(source, new File("/home/user/Desktop/Sample_Structure_Test_Automation_Project with Page Factory/Success_Screen_Capture/" + result.getName() + ".png"));
 
                 System.out.println("Test Passed Screenshot taken " +  result.getName());
+            } catch (Exception e) {
+
+                System.out.println("Exception while taking screenshot " + e.getMessage());
+            }
+        }
+
+        else if (ITestResult.SKIP == result.getStatus()){
+            test.log(LogStatus.SKIP, "Test Case " +  result.getName() + " Passed" );
+
+            try {
+                TakesScreenshot ts = (TakesScreenshot) driver;
+
+                File source = ts.getScreenshotAs(OutputType.FILE);
+
+                FileUtils.copyFile(source, new File("/home/user/Desktop/Sample_Structure_Test_Automation_Project with Page Factory/Success_Screen_Capture/" + result.getName() + ".png"));
+
+                System.out.println("Test Skiped Screenshot taken " +  result.getName());
             } catch (Exception e) {
 
                 System.out.println("Exception while taking screenshot " + e.getMessage());
