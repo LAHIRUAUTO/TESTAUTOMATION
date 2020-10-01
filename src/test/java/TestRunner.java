@@ -15,7 +15,10 @@ import org.testng.annotations.*;
 
 import javax.mail.MessagingException;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 /*import org.junit.AfterClass;
@@ -85,7 +88,16 @@ public class TestRunner extends Utils {
     }
 
     @AfterMethod
-    public void tearDown(ITestResult result) {
+    public void tearDown(ITestResult result) throws IOException {
+
+        //Load Property File
+        File src=new File("/home/user/Desktop/Sample_Structure_Test_Automation_Project with Page Factory/App.properties");
+        FileInputStream objfile = new FileInputStream(src);
+        Properties obj = new Properties();
+        obj.load(objfile);
+        String setProjectPath = obj.getProperty("ProjectPath");
+
+
             test.log(LogStatus.INFO, "Test Case " +  result.getName() + " Running" );
 
         if (ITestResult.FAILURE == result.getStatus()) {
@@ -96,7 +108,7 @@ public class TestRunner extends Utils {
 
                 File source = ts.getScreenshotAs(OutputType.FILE);
 
-                FileUtils.copyFile(source, new File("/home/user/Desktop/Sample_Structure_Test_Automation_Project with Page Factory/Failure_Screen_Capture/" + result.getName() + ".png"));
+                FileUtils.copyFile(source, new File(setProjectPath+"/Failure_Screen_Capture/" + result.getName() + ".png"));
 
                 System.out.println("Test Failed Screenshot taken " +  result.getName());
             } catch (Exception e) {
@@ -114,7 +126,7 @@ public class TestRunner extends Utils {
 
                 File source = ts.getScreenshotAs(OutputType.FILE);
 
-                FileUtils.copyFile(source, new File("/home/user/Desktop/Sample_Structure_Test_Automation_Project with Page Factory/Success_Screen_Capture/" + result.getName() + ".png"));
+                FileUtils.copyFile(source, new File(setProjectPath+"/Success_Screen_Capture/" + result.getName() + ".png"));
 
                 System.out.println("Test Passed Screenshot taken " +  result.getName());
             } catch (Exception e) {
@@ -131,7 +143,7 @@ public class TestRunner extends Utils {
 
                 File source = ts.getScreenshotAs(OutputType.FILE);
 
-                FileUtils.copyFile(source, new File("/home/user/Desktop/Sample_Structure_Test_Automation_Project with Page Factory/Success_Screen_Capture/" + result.getName() + ".png"));
+                FileUtils.copyFile(source, new File(setProjectPath+"/Skip_Screen_Capture/" + result.getName() + ".png"));
 
                 System.out.println("Test Skiped Screenshot taken " +  result.getName());
             } catch (Exception e) {

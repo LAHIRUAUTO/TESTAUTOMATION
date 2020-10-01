@@ -18,6 +18,7 @@ import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 
@@ -30,10 +31,18 @@ public class Utils {
     static ExtentTest test;
     static ExtentReports report;
     @BeforeSuite
-    public static void Intialize () {
+    public static void Intialize () throws IOException {
+
+        //Load Property File
+        File src=new File("/home/user/Desktop/Sample_Structure_Test_Automation_Project with Page Factory/App.properties");
+        FileInputStream objfile = new FileInputStream(src);
+        Properties obj = new Properties();
+        obj.load(objfile);
+        String setChromeDriver = obj.getProperty("ChromeDriver");
+        String setGeckoDriver = obj.getProperty("GeckoDriver");
 
 
-        System.setProperty("webdriver.gecko.driver", "/home/user/Desktop/Sample_Structure_Test_Automation_Project with Page Factory/resouces/chromedriver_linux64");
+        System.setProperty(setGeckoDriver, setChromeDriver);
 
         //Enable headless browser testing
         /*// Create Object of ChromeOption Class
@@ -155,7 +164,7 @@ public class Utils {
 
     @AfterSuite
     public static void close () {
-       //driver.close();
+       driver.close();
     }
 
 
