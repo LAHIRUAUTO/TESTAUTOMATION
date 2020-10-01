@@ -15,6 +15,10 @@ public class DcsDashBoardObject extends Utils {
     @CacheLookup
     WebElement dashBoardLocator;
 
+    @FindBy(xpath = "//*[@id=\"inputCheckinFlights\"]")
+    @CacheLookup
+    WebElement flightSearchLocator;
+
     @FindBy(xpath="/html/body/app-root/div/div[1]/app-home/main/div/div/main/div/section[1]/div/div/div/ngx-slick/div/div/div[1]/h5/a\n")
     @CacheLookup
     WebElement checkInFlight;

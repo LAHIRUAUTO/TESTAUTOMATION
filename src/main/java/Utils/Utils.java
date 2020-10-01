@@ -2,20 +2,15 @@ package Utils;
 
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
-import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.*;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 
-import javax.mail.Message;
-import javax.mail.MessagingException;
-import javax.mail.Session;
-import javax.mail.Transport;
-import javax.mail.internet.InternetAddress;
-import javax.mail.internet.MimeMessage;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -69,60 +64,7 @@ public class Utils {
     }
 
 
-    //Screen capture
-    public static String getScreenshot(WebDriver driver)
-        {
-            TakesScreenshot ts=(TakesScreenshot) driver;
 
-            File src=ts.getScreenshotAs(OutputType.FILE);
-
-            String path=System.getProperty("user.dir")+"/Screenshot/"+System.currentTimeMillis()+".png";
-
-            File destination=new File(path);
-
-            try
-            {
-                FileUtils.copyFile(src, destination);
-            } catch (IOException e)
-            {
-                System.out.println("Capture Failed "+e.getMessage());
-            }
-
-            return path;
-        }
-
-
-
-    //Email sender
-    public static void sendEmail() throws MessagingException {
-        // Setup mail server
-        String to = "vikasithasouth@gmail.com";
-        String from = "proavostest@gmail.com";
-        String host = "localhost"; // or IP address
-        Properties properties = System.getProperties();
-        properties.setProperty("mail.smtp.host", host);
-        Session session = Session.getDefaultInstance(properties);
-        try {
-
-            // javax.mail.internet.MimeMessage class
-            // is mostly used for abstraction.
-            MimeMessage message = new MimeMessage(session);
-
-            // header field of the header.
-            message.setFrom(new InternetAddress(from));
-            message.addRecipient(Message.RecipientType.TO,
-                    new InternetAddress(to));
-            message.setSubject("subject");
-            message.setText("Hello, aas is sending email ");
-
-            // Send message
-            Transport.send(message);
-            System.out.println("Yo it has been sent..");
-        }
-        catch (MessagingException mex) {
-            mex.printStackTrace();
-        }
-    }// End of SEND method
 
     @AfterSuite
     public static void close () {

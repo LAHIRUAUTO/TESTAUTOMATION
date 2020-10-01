@@ -6,6 +6,9 @@ import Utils.Utils;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
+import jxl.Sheet;
+import jxl.Workbook;
+import jxl.read.biff.BiffException;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -16,7 +19,6 @@ import org.testng.annotations.*;
 import javax.mail.MessagingException;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
@@ -32,9 +34,8 @@ public class TestRunner extends Utils {
     static ExtentTest test;
     static ExtentReports report;
 
-    public TestRunner() throws FileNotFoundException {
+    public TestRunner() throws IOException, BiffException {
     }
-
 
 
     @BeforeSuite
@@ -45,15 +46,26 @@ public class TestRunner extends Utils {
     }
 
     @BeforeMethod
-    public static void implicitWait (){
+    public static void implicitWait() {
+
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 
+    String FilePath = "/home/user/Desktop/Sample_Structure_Test_Automation_Project with Page Factory/Test Data/testdata.xls";
+    FileInputStream fs = new FileInputStream(FilePath);
+    Workbook wb = Workbook.getWorkbook(fs);
+    Sheet sh = wb.getSheet("DcsLoggin");
+
     @Test(priority = 1)
-    public void LogInToTheDCS() {
+    public void LogInToTheDCS() throws IOException, BiffException {
+
+
+        String username = sh.getCell("A2").getContents();
+        String password = sh.getCell("B2").getContents();
+
         LoginPage newloginpage = PageFactory.initElements(driver, LoginPage.class);
-        newloginpage.enterUsername("SYSTEM");
-        newloginpage.enterPassword("1Slite0614");
+        newloginpage.enterUsername(username);
+        newloginpage.enterPassword(password);
         newloginpage.clicklogInButton();
     }
 
@@ -79,73 +91,75 @@ public class TestRunner extends Utils {
     }
 
     @Test(dependsOnMethods = {"LogInToTheDCS"}, priority = 4)
-    public void GotoDashBoard () throws InterruptedException {
+    public void GotoDashBoard() throws InterruptedException {
+
+        String flightDesignator = sh.getCell("C2").getContents();
+
         DcsDashBoard newDashBoard = PageFactory.initElements(driver, DcsDashBoard.class);
         Thread.sleep(2000);
         newDashBoard.clickDashBoard();
         newDashBoard.checkDashBoardtitle();
+        newDashBoard.searchFlight(flightDesignator);
         newDashBoard.loadCheckInFlight();
     }
 
     @AfterMethod
+
     public void tearDown(ITestResult result) throws IOException {
 
         //Load Property File
-        File src=new File("/home/user/Desktop/Sample_Structure_Test_Automation_Project with Page Factory/App.properties");
+        File src = new File("/home/user/Desktop/Sample_Structure_Test_Automation_Project with Page Factory/App.properties");
         FileInputStream objfile = new FileInputStream(src);
         Properties obj = new Properties();
         obj.load(objfile);
         String setProjectPath = obj.getProperty("ProjectPath");
 
 
-            test.log(LogStatus.INFO, "Test Case " +  result.getName() + " Running" );
+        test.log(LogStatus.INFO, "Test Case " + result.getName() + " Running");
 
         if (ITestResult.FAILURE == result.getStatus()) {
-            test.log(LogStatus.FAIL, "Test Case " +  result.getName() + " Faild" );
+            test.log(LogStatus.FAIL, "Test Case " + result.getName() + " Faild");
 
             try {
                 TakesScreenshot ts = (TakesScreenshot) driver;
 
                 File source = ts.getScreenshotAs(OutputType.FILE);
 
-                FileUtils.copyFile(source, new File(setProjectPath+"/Failure_Screen_Capture/" + result.getName() + ".png"));
+                FileUtils.copyFile(source, new File(setProjectPath + "/Failure_Screen_Capture/" + result.getName() + ".png"));
 
-                System.out.println("Test Failed Screenshot taken " +  result.getName());
+                System.out.println("Test Failed Screenshot taken " + result.getName());
             } catch (Exception e) {
 
                 System.out.println("Exception while taking screenshot " + e.getMessage());
             }
 
 
-        }
-        else if (ITestResult.SUCCESS == result.getStatus()){
-            test.log(LogStatus.PASS, "Test Case " +  result.getName() + " Passed" );
+        } else if (ITestResult.SUCCESS == result.getStatus()) {
+            test.log(LogStatus.PASS, "Test Case " + result.getName() + " Passed");
 
             try {
                 TakesScreenshot ts = (TakesScreenshot) driver;
 
                 File source = ts.getScreenshotAs(OutputType.FILE);
 
-                FileUtils.copyFile(source, new File(setProjectPath+"/Success_Screen_Capture/" + result.getName() + ".png"));
+                FileUtils.copyFile(source, new File(setProjectPath + "/Success_Screen_Capture/" + result.getName() + ".png"));
 
-                System.out.println("Test Passed Screenshot taken " +  result.getName());
+                System.out.println("Test Passed Screenshot taken " + result.getName());
             } catch (Exception e) {
 
                 System.out.println("Exception while taking screenshot " + e.getMessage());
             }
-        }
-
-        else if (ITestResult.SKIP == result.getStatus()){
-            test.log(LogStatus.SKIP, "Test Case " +  result.getName() + " Passed" );
+        } else if (ITestResult.SKIP == result.getStatus()) {
+            test.log(LogStatus.SKIP, "Test Case " + result.getName() + " Passed");
 
             try {
                 TakesScreenshot ts = (TakesScreenshot) driver;
 
                 File source = ts.getScreenshotAs(OutputType.FILE);
 
-                FileUtils.copyFile(source, new File(setProjectPath+"/Skip_Screen_Capture/" + result.getName() + ".png"));
+                FileUtils.copyFile(source, new File(setProjectPath + "/Skip_Screen_Capture/" + result.getName() + ".png"));
 
-                System.out.println("Test Skiped Screenshot taken " +  result.getName());
+                System.out.println("Test Skiped Screenshot taken " + result.getName());
             } catch (Exception e) {
 
                 System.out.println("Exception while taking screenshot " + e.getMessage());
@@ -153,24 +167,20 @@ public class TestRunner extends Utils {
         }
     }
 
-        @AfterClass
-        public static void endTest ()
-        {
-            report.endTest(test);
-            report.flush();
-
-        }
-
-
-        @AfterSuite
-        public static void endSuite () throws MessagingException {
-
-            //Utils.sendEmail("proavostest@gmail.com", "vikasithasouth@gmail.com", "Test Email Attachment", "Test Email Attachment");
-        }
-
-
-
-
+    @AfterClass
+    public static void endTest() {
+        report.endTest(test);
+        report.flush();
 
     }
+
+
+    @AfterSuite
+    public static void endSuite() throws MessagingException {
+
+        //Utils.sendEmail("proavostest@gmail.com", "vikasithasouth@gmail.com", "Test Email Attachment", "Test Email Attachment");
+    }
+
+
+}
 

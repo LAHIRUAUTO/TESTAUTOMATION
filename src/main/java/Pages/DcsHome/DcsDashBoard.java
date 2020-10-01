@@ -16,6 +16,11 @@ public class DcsDashBoard extends DcsDashBoardObject {
 
     }
 
+    public void searchFlight (String flightDesignator){
+        flightSearchLocator.clear();
+        flightSearchLocator.sendKeys(flightDesignator);
+    }
+
     public void loadCheckInFlight (){
 
         checkInFlight.click();
