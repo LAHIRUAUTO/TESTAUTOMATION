@@ -6,7 +6,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
@@ -39,15 +38,15 @@ public class Utils {
         System.setProperty(setGeckoDriver, setChromeDriver);
 
         //Enable headless browser testing
-        // Create Object of ChromeOption Class
+        /*// Create Object of ChromeOption Class
         ChromeOptions option=new ChromeOptions();
 
         //Set the setHeadless is equal to true which will run test in Headless mode
-        option.setHeadless(true);
+        option.setHeadless(true);*/
 
         //driver = new ChromeDriver(option);
 
-        driver = new ChromeDriver(option);
+        driver = new ChromeDriver();
         driver.get("https://dcsqa.avtra.com/dcs/#/login/en/IR");
         driver.manage().window().maximize();
     }

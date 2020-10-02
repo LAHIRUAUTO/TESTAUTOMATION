@@ -1,11 +1,18 @@
 package Pages.HomePage;
 
 
+import org.openqa.selenium.NoSuchElementException;
+
 public class LoginPage extends LoginPageObject {
 
     public  void enterUsername (String username){
 
-        usernamelocator.sendKeys (username);
+        try{
+            usernamelocator.sendKeys (username);
+
+        } catch (NoSuchElementException e) {
+            System.out.println("User name field could not be located");
+        }
 
     }
 
