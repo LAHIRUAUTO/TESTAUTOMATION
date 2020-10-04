@@ -20,6 +20,8 @@ import javax.mail.MessagingException;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
@@ -40,7 +42,10 @@ public class TestRunner extends Utils {
 
     @BeforeSuite
     public static void startTest() {
-        report = new ExtentReports(System.getProperty("user.dir") + "/Test_Result.html", true);
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy MM dd HH:mm/");
+        LocalDateTime now = LocalDateTime.now();
+        System.out.println(dtf.format(now));
+        report = new ExtentReports(System.getProperty("user.dir") + "/Extent_Reports/" +  dtf.format(now) + "Test_Result.html", true);
         test = report.startTest("Test Result");
 
     }
@@ -49,6 +54,8 @@ public class TestRunner extends Utils {
     Workbook wb = Workbook.getWorkbook(fs);
     Sheet DcsLogginSh = wb.getSheet("DcsLoggin");
     Sheet DashBoardSh = wb.getSheet("DashBoard");
+
+
 
     @BeforeSuite
     public static void implicitWait() {
@@ -73,7 +80,7 @@ public class TestRunner extends Utils {
 
 
 
-
+    //@Dataprovider annotation checking for loggin function
     /*@Test(priority = 1, dataProvider="getData")
     public void LogInToTheDCS(String username, String password) throws IOException, BiffException {
 
@@ -158,6 +165,14 @@ public class TestRunner extends Utils {
         newDashBoard.loadCheckInFlight();
     }
 
+    @Test (priority = 6)
+    public void LogOut (){
+        MainMenu newMainMenu = PageFactory.initElements(driver, MainMenu.class);
+        newMainMenu.clickMainMenuLink();
+        newMainMenu.gotoLogOutButtonLink();
+        newMainMenu.clickLogOut();
+    }
+
     @AfterMethod
 
     public void tearDown(ITestResult result) throws IOException {
@@ -171,6 +186,9 @@ public class TestRunner extends Utils {
 
 
         test.log(LogStatus.INFO, "Test Case " + result.getName() + " Running");
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy MM dd HH:mm/");
+        LocalDateTime now = LocalDateTime.now();
+        System.out.println(dtf.format(now));
 
         if (ITestResult.FAILURE == result.getStatus()) {
             test.log(LogStatus.FAIL, "Test Case " + result.getName() + " Faild");
@@ -180,7 +198,7 @@ public class TestRunner extends Utils {
 
                 File source = ts.getScreenshotAs(OutputType.FILE);
 
-                FileUtils.copyFile(source, new File(setProjectPath + "/Failure_Screen_Capture/" + result.getName() + ".png"));
+                FileUtils.copyFile(source, new File(setProjectPath + "/Screen_Capture_Result/Failure_Screen_Capture/" +  dtf.format(now) + result.getName() +  ".png"));
 
                 System.out.println("Test Failed Screenshot taken " + result.getName());
             } catch (Exception e) {
@@ -197,7 +215,7 @@ public class TestRunner extends Utils {
 
                 File source = ts.getScreenshotAs(OutputType.FILE);
 
-                FileUtils.copyFile(source, new File(setProjectPath + "/Success_Screen_Capture/" + result.getName() + ".png"));
+                FileUtils.copyFile(source, new File(setProjectPath + "/Screen_Capture_Result/Success_Screen_Capture/"  +  dtf.format(now) + result.getName() +  ".png"));
 
                 System.out.println("Test Passed Screenshot taken " + result.getName());
             } catch (Exception e) {
@@ -212,7 +230,7 @@ public class TestRunner extends Utils {
 
                 File source = ts.getScreenshotAs(OutputType.FILE);
 
-                FileUtils.copyFile(source, new File(setProjectPath + "/Skip_Screen_Capture/" + result.getName() + ".png"));
+                FileUtils.copyFile(source, new File(setProjectPath + "/Screen_Capture_Result/Skip_Screen_Capture/"  +  dtf.format(now) + result.getName() +  ".png"));
 
                 System.out.println("Test Skiped Screenshot taken " + result.getName());
             } catch (Exception e) {
