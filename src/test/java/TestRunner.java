@@ -44,30 +44,80 @@ public class TestRunner extends Utils {
         test = report.startTest("Test Result");
 
     }
+    String FilePath = "/home/user/Desktop/Sample_Structure_Test_Automation_Project with Page Factory/Test Data/testdata.xls";
+    FileInputStream fs = new FileInputStream(FilePath);
+    Workbook wb = Workbook.getWorkbook(fs);
+    Sheet DcsLogginSh = wb.getSheet("DcsLoggin");
+    Sheet DashBoardSh = wb.getSheet("DashBoard");
 
-    @BeforeMethod
+    @BeforeSuite
     public static void implicitWait() {
 
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 
-    String FilePath = "/home/user/Desktop/Sample_Structure_Test_Automation_Project with Page Factory/Test Data/testdata.xls";
-    FileInputStream fs = new FileInputStream(FilePath);
-    Workbook wb = Workbook.getWorkbook(fs);
-    Sheet sh = wb.getSheet("DcsLoggin");
-
     @Test(priority = 1)
     public void LogInToTheDCS() throws IOException, BiffException {
 
 
-        String username = sh.getCell("A2").getContents();
-        String password = sh.getCell("B2").getContents();
+        String username = DcsLogginSh.getCell("A2").getContents();
+        String password = DcsLogginSh.getCell("B2").getContents();
 
-        LoginPage newloginpage = PageFactory.initElements(driver, LoginPage.class);
-        newloginpage.enterUsername(username);
-        newloginpage.enterPassword(password);
-        newloginpage.clicklogInButton();
+            LoginPage newloginpage = PageFactory.initElements(driver, LoginPage.class);
+            newloginpage.enterUsername(username);
+            newloginpage.enterPassword(password);
+            newloginpage.clicklogInButton();
+
+
     }
+
+
+
+
+    /*@Test(priority = 1, dataProvider="getData")
+    public void LogInToTheDCS(String username, String password) throws IOException, BiffException {
+
+
+        //String username = DcsLogginSh.getCell("A2").getContents();
+        //String password = DcsLogginSh.getCell("B2").getContents();
+        try {
+            LoginPage newloginpage = PageFactory.initElements(driver, LoginPage.class);
+            MainMenu newMainMenu = PageFactory.initElements(driver, MainMenu.class);
+            Flights newFlight = PageFactory.initElements(driver, Flights.class);
+            newloginpage.enterUsername(username);
+            newloginpage.enterPassword(password);
+            newloginpage.clicklogInButton();
+            newMainMenu.clickMainMenuLink();
+            newMainMenu.gotoLogOutButtonLink();
+            newMainMenu.clickLogOut();
+
+        }
+        catch (Exception e) {
+            System.out.println("Loging Failure");
+        }
+    }
+    @DataProvider
+    public Object [][] getData (){
+        //Rows - Number of times your test has to be repeated.
+        //Columns - Number of parameters in test data.
+        Object[][] data = new Object[3][2];
+
+        // 1st row
+        data[0][0] = "SYSTEM";
+        data[0][1] = "1Slite0614";
+
+        // 2nd row
+        data[1][0] = "LAHIRU";
+        data[1][1] = "Lahirupw";
+
+        // 3rd row
+        data[2][0] = "TEST";
+        data[2][1] = "TESTPW";
+
+        return data;
+
+
+    }*/
 
     @Test(dependsOnMethods = {"LogInToTheDCS"}, priority = 2)
     public void GotoMainMenu() throws InterruptedException {
@@ -92,13 +142,18 @@ public class TestRunner extends Utils {
 
     @Test(dependsOnMethods = {"LogInToTheDCS"}, priority = 4)
     public void GotoDashBoard() throws InterruptedException {
-
-        String flightDesignator = sh.getCell("C2").getContents();
-
         DcsDashBoard newDashBoard = PageFactory.initElements(driver, DcsDashBoard.class);
         Thread.sleep(2000);
         newDashBoard.clickDashBoard();
         newDashBoard.checkDashBoardtitle();
+    }
+
+    @Test(dependsOnMethods = {"LogInToTheDCS","GotoDashBoard"}, priority = 5)
+    public void LoadFlightToCheckIn() throws InterruptedException {
+
+        String flightDesignator = DashBoardSh.getCell("A2").getContents();
+        DcsDashBoard newDashBoard = PageFactory.initElements(driver, DcsDashBoard.class);
+        Thread.sleep(2000);
         newDashBoard.searchFlight(flightDesignator);
         newDashBoard.loadCheckInFlight();
     }

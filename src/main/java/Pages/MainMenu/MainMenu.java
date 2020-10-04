@@ -24,5 +24,17 @@ public class MainMenu extends MainMenuObject {
         dashBoardLink.click();
     }
 
+    public void gotoLogOutButtonLink (){
+
+        mouseHover(elementByXpath(logOutButtonLocator));
+
+
+    }
+
+    public void clickLogOut (){
+
+        elementByXpath(logOutLocator).click();
+    }
+
 
 }

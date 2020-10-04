@@ -132,7 +132,6 @@
     <orderEntry type="library" name="Maven: com.sikulix:sikulixlibswin:1.1.0" level="project" />
     <orderEntry type="library" name="Maven: com.nativelibs4java:bridj:0.7.0" level="project" />
     <orderEntry type="library" name="Maven: com.google.android.tools:dx:1.7" level="project" />
-    <orderEntry type="library" name="Maven: log4j:log4j:1.2.17" level="project" />
     <orderEntry type="library" name="Maven: com.github.dine11101:sikuli:0.0.2" level="project" />
     <orderEntry type="library" name="Maven: org.seleniumhq.selenium:selenium-java:2.44.0" level="project" />
     <orderEntry type="library" name="Maven: org.seleniumhq.selenium:selenium-htmlunit-driver:2.44.0" level="project" />
@@ -157,5 +156,6 @@
     <orderEntry type="library" name="Maven: ru.stqa.selenium:webdriver-expected-conditions:1.0.41" level="project" />
     <orderEntry type="library" name="Maven: org.simplejavamail:simple-java-mail:4.1.2" level="project" />
     <orderEntry type="library" name="Maven: com.google.code.findbugs:jsr305:3.0.1" level="project" />
+    <orderEntry type="library" name="Maven: log4j:log4j:1.2.17" level="project" />
   </component>
 </module>
