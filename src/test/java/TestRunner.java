@@ -71,16 +71,45 @@ public class TestRunner extends Utils {
         String password = DcsLogginSh.getCell("B2").getContents();
 
             LoginPage newloginpage = PageFactory.initElements(driver, LoginPage.class);
+            MainMenu newMainMenu = PageFactory.initElements(driver, MainMenu.class);
+
             newloginpage.enterUsername(username);
             newloginpage.enterPassword(password);
             newloginpage.clicklogInButton();
+            /*newMainMenu.clickMainMenuLink();
+            newMainMenu.gotoLogOutButtonLink();
+            newMainMenu.clickLogOut();*/
+            currerntThreadId();
+            //System.out.println("Login method thread id:" +Thread.currentThread().getId());
 
 
     }
 
+    /*@Test(priority = 1)
+    public void LogInToTheDCS2() throws IOException, BiffException {
 
 
-    //@Dataprovider annotation checking for loggin function
+        String username = DcsLogginSh.getCell("A2").getContents();
+        String password = DcsLogginSh.getCell("B2").getContents();
+
+        LoginPage newloginpage = PageFactory.initElements(driver2, LoginPage.class);
+        MainMenu newMainMenu = PageFactory.initElements(driver2, MainMenu.class);
+
+        newloginpage.enterUsername(username);
+        newloginpage.enterPassword(password);
+        newloginpage.clicklogInButton();
+        newMainMenu.clickMainMenuLink();
+        newMainMenu.gotoLogOutButtonLink();
+        newMainMenu.clickLogOut();
+        currerntThreadId();
+        //System.out.println("Login method thread id:" +Thread.currentThread().getId());
+
+
+    }*/
+
+
+
+    //@Dataprovider annotation for loggin function
     /*@Test(priority = 1, dataProvider="getData")
     public void LogInToTheDCS(String username, String password) throws IOException, BiffException {
 

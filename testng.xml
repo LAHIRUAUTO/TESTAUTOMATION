@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="DCS TEST SUITE">
+<suite name="DCS TEST SUITE" thread-count="2" parallel="methods">
     <test verbose="2" preserve-order="true" name= "Suite 1">
         <classes>
             <!--<class name="CheckInFlowRunner"/>-->

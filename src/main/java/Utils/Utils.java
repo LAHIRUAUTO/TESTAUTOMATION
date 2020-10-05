@@ -8,6 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 
 import java.io.File;
@@ -21,6 +22,8 @@ import java.util.Properties;
 
 public class Utils {
     public static WebDriver driver;
+    public static WebDriver driver2;
+
     static ExtentTest test;
     static ExtentReports report;
     @BeforeSuite
@@ -49,6 +52,17 @@ public class Utils {
         driver = new ChromeDriver();
         driver.get("https://dcsqa.avtra.com/dcs/#/login/en/IR");
         driver.manage().window().maximize();
+
+/*        driver2 = new ChromeDriver();
+        driver2.get("https://dcsqa.avtra.com/dcs/#/login/en/IR");
+        driver2.manage().window().maximize();*/
+
+
+    }
+
+    @BeforeMethod
+    public static void currerntThreadId (){
+        System.out.println("Current Thread ID: "+Thread.currentThread().getId());
     }
 
 
@@ -67,7 +81,8 @@ public class Utils {
 
     @AfterSuite
     public static void close () {
-       driver.close();
+
+        driver.close();
     }
 
 }
