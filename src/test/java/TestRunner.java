@@ -57,7 +57,7 @@ public class TestRunner extends Utils {
 
 
 
-    @BeforeSuite
+    @BeforeMethod
     public static void implicitWait() {
 
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);

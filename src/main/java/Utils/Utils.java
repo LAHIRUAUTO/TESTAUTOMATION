@@ -9,14 +9,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.opera.OperaDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.*;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.IOException;
 import java.util.Properties;
 
 //import org.openqa.selenium.*;
@@ -25,12 +23,12 @@ import java.util.Properties;
 
 public class Utils {
     public static WebDriver driver;
-    public static WebDriver driver2;
 
     static ExtentTest test;
     static ExtentReports report;
-    @BeforeSuite
-    public static void Intialize () throws IOException {
+    @Parameters("browser")
+    @BeforeClass
+    public static void Intialize (String browser) throws Exception {
 
         //Load Property File
         File src=new File("/home/user/Desktop/Sample_Structure_Test_Automation_Project with Page Factory/App.properties");
@@ -39,11 +37,12 @@ public class Utils {
         obj.load(objfile);
         String setChromeDriver = obj.getProperty("ChromeDriver");
         String setFirefoxDriver = obj.getProperty("FirefoxDriver");
+        String setOperaDriver = obj.getProperty("OperaDriver");
         String setGeckoDriver = obj.getProperty("GeckoDriver");
 
 
-        System.setProperty(setGeckoDriver, setChromeDriver);
-        System.setProperty(setGeckoDriver, setFirefoxDriver);
+
+
 
         //Enable headless browser testing
         /*// Create Object of ChromeOption Class
@@ -54,20 +53,48 @@ public class Utils {
 
         //driver = new ChromeDriver(option);
 
-        driver = new ChromeDriver();
-        driver.get("https://dcsqa.avtra.com/dcs/#/login/en/IR");
-        driver.manage().window().maximize();
+        //Check if parameter passed from TestNG is 'firefox'
+        if(browser.equalsIgnoreCase("firefox")){
+            //create firefox instance
+            System.setProperty(setGeckoDriver, setFirefoxDriver);
+            DesiredCapabilities capabilities = new DesiredCapabilities();
+            capabilities = DesiredCapabilities.firefox();
+            capabilities.setBrowserName("firefox");
+            //capabilities.setVersion("your firefox version");
+            capabilities.setPlatform(Platform.LINUX);
+            capabilities.setCapability("marionette", false);
+            driver = new FirefoxDriver(capabilities);
+            driver.get("https://dcsqa.avtra.com/dcs/#/login/en/IR");
+            driver.manage().window().maximize();
+        }
+
+        else if(browser.equalsIgnoreCase("chrome")){
+            //set path to chromedriver.exe
+            System.setProperty(setGeckoDriver, setChromeDriver);
+            //create chrome instance
+            driver = new ChromeDriver();
+            driver.get("https://dcsqa.avtra.com/dcs/#/login/en/IR");
+            driver.manage().window().maximize();
+        }
+
+        else if(browser.equalsIgnoreCase("opera")){
+            //set path to opera driver
+            System.setProperty("webdriver.opera.driver", setOperaDriver);
+            //create Opera instance
+            driver = new OperaDriver();
+            driver.get("https://dcsqa.avtra.com/dcs/#/login/en/IR");
+            driver.manage().window().maximize();
+        }
+
+        else{
+            //If no browser passed throw exception
+            throw new Exception("Browser is not correct");
+        }
 
 
-        DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities = DesiredCapabilities.firefox();
-        capabilities.setBrowserName("firefox");
-        //capabilities.setVersion("your firefox version");
-        capabilities.setPlatform(Platform.LINUX);
-        capabilities.setCapability("marionette", false);
-        driver2 = new FirefoxDriver(capabilities);
-        driver2.get("https://dcsqa.avtra.com/dcs/#/login/en/IR");
-        driver2.manage().window().maximize();
+
+
+
 
 
     }
@@ -91,7 +118,7 @@ public class Utils {
 
 
 
-    @AfterSuite
+    @AfterClass
     public static void close () {
 
         driver.close();
