@@ -227,7 +227,7 @@ public class TestRunner extends Utils {
 
                 File source = ts.getScreenshotAs(OutputType.FILE);
 
-                FileUtils.copyFile(source, new File(setProjectPath + "/Screen_Capture_Result/Failure_Screen_Capture/" +  dtf.format(now) + result.getName() +  ".png"));
+                FileUtils.copyFile(source, new File(setProjectPath + "/Screen_Capture_Result/Failure_Screen_Capture/" + driver +  dtf.format(now) + result.getName() +  ".png"));
 
                 System.out.println("Test Failed Screenshot taken " + result.getName());
             } catch (Exception e) {
@@ -244,7 +244,7 @@ public class TestRunner extends Utils {
 
                 File source = ts.getScreenshotAs(OutputType.FILE);
 
-                FileUtils.copyFile(source, new File(setProjectPath + "/Screen_Capture_Result/Success_Screen_Capture/"  +  dtf.format(now) + result.getName() +  ".png"));
+                FileUtils.copyFile(source, new File(setProjectPath + "/Screen_Capture_Result/Success_Screen_Capture/" + driver  +  dtf.format(now) + result.getName() +  ".png"));
 
                 System.out.println("Test Passed Screenshot taken " + result.getName());
             } catch (Exception e) {
@@ -259,7 +259,7 @@ public class TestRunner extends Utils {
 
                 File source = ts.getScreenshotAs(OutputType.FILE);
 
-                FileUtils.copyFile(source, new File(setProjectPath + "/Screen_Capture_Result/Skip_Screen_Capture/"  +  dtf.format(now) + result.getName() +  ".png"));
+                FileUtils.copyFile(source, new File(setProjectPath + "/Screen_Capture_Result/Skip_Screen_Capture/" + driver  +  dtf.format(now) + result.getName() +  ".png"));
 
                 System.out.println("Test Skiped Screenshot taken " + result.getName());
             } catch (Exception e) {
