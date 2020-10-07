@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -53,12 +54,12 @@ public class Utils {
 
         //driver = new ChromeDriver(option);
 
-        /*driver = new ChromeDriver();
+        driver = new ChromeDriver();
         driver.get("https://dcsqa.avtra.com/dcs/#/login/en/IR");
-        driver.manage().window().maximize();*/
+        driver.manage().window().maximize();
+
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
-
         capabilities = DesiredCapabilities.firefox();
         capabilities.setBrowserName("firefox");
         //capabilities.setVersion("your firefox version");
