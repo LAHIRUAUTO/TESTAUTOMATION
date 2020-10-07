@@ -214,13 +214,13 @@ public class TestRunner extends Utils {
         String setProjectPath = obj.getProperty("ProjectPath");
 
 
-        test.log(LogStatus.INFO, "Test Case " + result.getName() + " Running");
+        test.log(LogStatus.INFO,  driver +" - Test Case " + result.getName() + " Running");
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy MM dd HH:mm/");
         LocalDateTime now = LocalDateTime.now();
         System.out.println(dtf.format(now));
 
         if (ITestResult.FAILURE == result.getStatus()) {
-            test.log(LogStatus.FAIL, "Test Case " + result.getName() + " Faild");
+            test.log(LogStatus.FAIL, driver + " - Test Case " + result.getName() + " Faild");
 
             try {
                 TakesScreenshot ts = (TakesScreenshot) driver;
@@ -237,7 +237,7 @@ public class TestRunner extends Utils {
 
 
         } else if (ITestResult.SUCCESS == result.getStatus()) {
-            test.log(LogStatus.PASS, "Test Case " + result.getName() + " Passed");
+            test.log(LogStatus.PASS, driver +" - Test Case " + result.getName() + " Passed");
 
             try {
                 TakesScreenshot ts = (TakesScreenshot) driver;
@@ -252,7 +252,7 @@ public class TestRunner extends Utils {
                 System.out.println("Exception while taking screenshot " + e.getMessage());
             }
         } else if (ITestResult.SKIP == result.getStatus()) {
-            test.log(LogStatus.SKIP, "Test Case " + result.getName() + " Passed");
+            test.log(LogStatus.SKIP, driver + " - Test Case " + result.getName() + " Passed");
 
             try {
                 TakesScreenshot ts = (TakesScreenshot) driver;
