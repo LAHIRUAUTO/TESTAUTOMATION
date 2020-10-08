@@ -3,6 +3,7 @@ import Pages.Flights.Flights;
 import Pages.HomePage.LoginPage;
 import Pages.MainMenu.MainMenu;
 import Utils.Utils;
+import Utils.Retry;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
@@ -64,7 +65,7 @@ public class TestRunner extends Utils {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 
-    @Test(priority = 1)
+    @Test(priority = 1, retryAnalyzer = Retry.class)
     public void LogInToTheDCS() throws IOException, BiffException {
 
 
@@ -156,7 +157,7 @@ public class TestRunner extends Utils {
 
     }*/
 
-    @Test(dependsOnMethods = {"LogInToTheDCS"}, priority = 2)
+    @Test(dependsOnMethods = {"LogInToTheDCS"}, priority = 2 , retryAnalyzer = Retry.class)
     public void GotoMainMenu() throws InterruptedException {
 
         MainMenu newMainMenu = PageFactory.initElements(driver, MainMenu.class);
@@ -165,7 +166,7 @@ public class TestRunner extends Utils {
 
     }
 
-    @Test(dependsOnMethods = {"LogInToTheDCS", "GotoMainMenu"}, priority = 3, enabled = true)
+    @Test(dependsOnMethods = {"LogInToTheDCS", "GotoMainMenu"}, priority = 3, enabled = true , retryAnalyzer = Retry.class)
 
     public void goToFlights() throws InterruptedException {
 
@@ -177,7 +178,7 @@ public class TestRunner extends Utils {
 
     }
 
-    @Test(dependsOnMethods = {"LogInToTheDCS"}, priority = 4)
+    @Test(dependsOnMethods = {"LogInToTheDCS"}, priority = 4 , retryAnalyzer = Retry.class)
     public void GotoDashBoard() throws InterruptedException {
         DcsDashBoard newDashBoard = PageFactory.initElements(driver, DcsDashBoard.class);
         Thread.sleep(2000);
@@ -185,7 +186,7 @@ public class TestRunner extends Utils {
         newDashBoard.checkDashBoardtitle();
     }
 
-    @Test(dependsOnMethods = {"LogInToTheDCS","GotoDashBoard"}, priority = 5)
+    @Test(dependsOnMethods = {"LogInToTheDCS","GotoDashBoard"}, priority = 5 , retryAnalyzer = Retry.class)
     public void LoadFlightToCheckIn() throws InterruptedException {
 
         String flightDesignator = DashBoardSh.getCell("A2").getContents();
@@ -195,7 +196,7 @@ public class TestRunner extends Utils {
         newDashBoard.loadCheckInFlight();
     }
 
-    @Test (priority = 6)
+    @Test (priority = 6 , retryAnalyzer = Retry.class)
     public void LogOut (){
         MainMenu newMainMenu = PageFactory.initElements(driver, MainMenu.class);
         newMainMenu.clickMainMenuLink();
