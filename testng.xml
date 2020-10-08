@@ -10,13 +10,23 @@
     <test verbose="2" preserve-order="true" name= "Firefox Suite">
         <parameter name="browser" value="Firefox" />
         <classes>
-            <class name="TestRunner"/>
+            <class name="TestRunner">
+                <methods>
+                    <include name="LogInToTheDCS" />
+                    <include name="GotoMainMenu" />
+                    <exclude name="goToFlights" />
+                    <exclude name="GotoDashBoard" />
+                    <exclude name="LoadFlightToCheckIn" />
+                    <exclude name="LogOut" />
+                </methods>
+            </class>
         </classes>
     </test>
     <test verbose="2" preserve-order="true" name= "Opera Suite">
         <parameter name="browser" value="Opera" />
         <classes>
-            <class name="TestRunner"/>
+            <class name="TestRunner">
+            </class>
         </classes>
     </test>
 </suite>

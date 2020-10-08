@@ -30,6 +30,7 @@ import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;*/
 
+
 public class TestRunner extends Utils {
 
 
@@ -164,7 +165,7 @@ public class TestRunner extends Utils {
 
     }
 
-    @Test(dependsOnMethods = {"LogInToTheDCS", "GotoMainMenu"}, priority = 3)
+    @Test(dependsOnMethods = {"LogInToTheDCS", "GotoMainMenu"}, priority = 3, enabled = true)
 
     public void goToFlights() throws InterruptedException {
 
