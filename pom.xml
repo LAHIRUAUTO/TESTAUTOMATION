@@ -101,6 +101,14 @@
             <version>2.0a7</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-support</artifactId>
+            <version>3.14.0</version>
+        </dependency>
+        <!-- Thanks for using https://jar-download.com -->
+
+
         <!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
         <dependency>
             <groupId>commons-io</groupId>
@@ -182,6 +190,35 @@
             <artifactId>maven-deploy-plugin</artifactId>
             <version>2.7</version>
         </dependency>
+
+        <!-- https://mvnrepository.com/artifact/ru.stqa.selenium/webdriver-expected-conditions -->
+        <dependency>
+            <groupId>ru.stqa.selenium</groupId>
+            <artifactId>webdriver-expected-conditions</artifactId>
+            <version>1.0.41</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.simplejavamail/simple-java-mail -->
+        <dependency>
+            <groupId>org.simplejavamail</groupId>
+            <artifactId>simple-java-mail</artifactId>
+            <version>4.1.2</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/log4j/log4j -->
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.17</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>3.12.0</version>
+        </dependency>
+
 
 
 

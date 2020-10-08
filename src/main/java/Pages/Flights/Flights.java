@@ -17,4 +17,6 @@ public class Flights extends FlightsObject{
 
         elementByXpath(flightsLocator).click();
     }
+
+
 }
