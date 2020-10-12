@@ -4,69 +4,33 @@ import Pages.HomePage.LoginPage;
 import Pages.MainMenu.MainMenu;
 import Utils.Retry;
 import Utils.Utils;
-import com.relevantcodes.extentreports.ExtentReports;
-import com.relevantcodes.extentreports.ExtentTest;
-import com.relevantcodes.extentreports.LogStatus;
 import jxl.Sheet;
 import jxl.Workbook;
 import jxl.read.biff.BiffException;
-import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.logging.LogEntries;
 import org.openqa.selenium.logging.LogType;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
-import org.testng.ITestResult;
-import org.testng.annotations.*;
+import org.testng.annotations.Test;
 
-import javax.mail.MessagingException;
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.Properties;
-import java.util.concurrent.TimeUnit;
-
-/*import org.junit.AfterClass;
-import org.junit.Assert;
-import org.junit.BeforeClass;
-import org.junit.Test;*/
 
 
 public class TestRunner extends Utils {
 
 
-    static ExtentTest test;
-    static ExtentReports report;
+
 
     public TestRunner() throws IOException, BiffException {
     }
 
-
-    @BeforeSuite
-    public static void startTest() {
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy MM dd HH:mm/");
-        LocalDateTime now = LocalDateTime.now();
-        System.out.println(dtf.format(now) + ": Test suite started ");
-        report = new ExtentReports(System.getProperty("user.dir") + "/Extent_Reports/" +  dtf.format(now) + "Test_Result.html", true);
-        test = report.startTest("Test Result");
-
-    }
     String FilePath = "/home/user/Desktop/Sample_Structure_Test_Automation_Project with Page Factory/Test Data/testdata.xls";
     FileInputStream fs = new FileInputStream(FilePath);
     Workbook wb = Workbook.getWorkbook(fs);
     Sheet DcsLogginSh = wb.getSheet("DcsLoggin");
     Sheet DashBoardSh = wb.getSheet("DashBoard");
 
-
-
-    @BeforeMethod
-    public static void implicitWait() {
-
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-    }
 
     @Test(priority = 1, retryAnalyzer = Retry.class)
     public void LogInToTheDCS() throws IOException, BiffException {
@@ -90,29 +54,6 @@ public class TestRunner extends Utils {
 
 
     }
-
-    /*@Test(priority = 1)
-    public void LogInToTheDCS2() throws IOException, BiffException {
-
-
-        String username = DcsLogginSh.getCell("A2").getContents();
-        String password = DcsLogginSh.getCell("B2").getContents();
-
-        LoginPage newloginpage = PageFactory.initElements(driver2, LoginPage.class);
-        MainMenu newMainMenu = PageFactory.initElements(driver2, MainMenu.class);
-
-        newloginpage.enterUsername(username);
-        newloginpage.enterPassword(password);
-        newloginpage.clicklogInButton();
-        newMainMenu.clickMainMenuLink();
-        newMainMenu.gotoLogOutButtonLink();
-        newMainMenu.clickLogOut();
-        currerntThreadId();
-        //System.out.println("Login method thread id:" +Thread.currentThread().getId());
-
-
-    }*/
-
 
 
     //@Dataprovider annotation for loggin function
@@ -210,90 +151,7 @@ public class TestRunner extends Utils {
         newMainMenu.clickLogOut();
     }
 
-    @AfterMethod
 
-    public void tearDown(ITestResult result) throws IOException {
-
-        //Load Property File
-        File src = new File("/home/user/Desktop/Sample_Structure_Test_Automation_Project with Page Factory/App.properties");
-        FileInputStream objfile = new FileInputStream(src);
-        Properties obj = new Properties();
-        obj.load(objfile);
-        String setProjectPath = obj.getProperty("ProjectPath");
-
-
-        test.log(LogStatus.INFO,  driver +" - Test Case " + result.getName() + " Running");
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy MM dd HH:mm/");
-        LocalDateTime now = LocalDateTime.now();
-        //System.out.println(dtf.format(now));
-
-        if (ITestResult.FAILURE == result.getStatus()) {
-            test.log(LogStatus.FAIL, driver + " - Test Case " + result.getName() + " Faild");
-
-            try {
-                TakesScreenshot ts = (TakesScreenshot) driver;
-
-                File source = ts.getScreenshotAs(OutputType.FILE);
-
-                FileUtils.copyFile(source, new File(setProjectPath + "/Screen_Capture_Result/Failure_Screen_Capture/" + driver +  dtf.format(now) + result.getName() +  ".png"));
-
-                //System.out.println("Running the Test Case : " + result.getName());
-                //System.out.println("Test Failed Screenshot taken " + result.getName());
-
-            } catch (Exception e) {
-
-                System.out.println("Exception while taking screenshot " + e.getMessage());
-            }
-
-
-        } else if (ITestResult.SUCCESS == result.getStatus()) {
-            test.log(LogStatus.PASS, driver +" - Test Case " + result.getName() + " Passed");
-
-            try {
-                TakesScreenshot ts = (TakesScreenshot) driver;
-
-                File source = ts.getScreenshotAs(OutputType.FILE);
-
-                FileUtils.copyFile(source, new File(setProjectPath + "/Screen_Capture_Result/Success_Screen_Capture/" + driver  +  dtf.format(now) + result.getName() +  ".png"));
-
-                //System.out.println("Running the Test Case : " + result.getName());
-                //System.out.println("Test Passed Screenshot taken " + result.getName());
-            } catch (Exception e) {
-
-                System.out.println("Exception while taking screenshot " + e.getMessage());
-            }
-        } else if (ITestResult.SKIP == result.getStatus()) {
-            test.log(LogStatus.SKIP, driver + " - Test Case " + result.getName() + " Passed");
-
-            try {
-                TakesScreenshot ts = (TakesScreenshot) driver;
-
-                File source = ts.getScreenshotAs(OutputType.FILE);
-
-                FileUtils.copyFile(source, new File(setProjectPath + "/Screen_Capture_Result/Skip_Screen_Capture/" + driver  +  dtf.format(now) + result.getName() +  ".png"));
-
-                //System.out.println("Running the Test Case : " + result.getName());
-                //System.out.println("Test Skiped Screenshot taken " + result.getName());
-            } catch (Exception e) {
-
-                System.out.println("Exception while taking screenshot " + e.getMessage());
-            }
-        }
-    }
-
-    @AfterClass
-    public static void endTest() {
-        report.endTest(test);
-        report.flush();
-
-    }
-
-
-    @AfterSuite
-    public static void endSuite() throws MessagingException {
-
-        //Utils.sendEmail("proavostest@gmail.com", "vikasithasouth@gmail.com", "Test Email Attachment", "Test Email Attachment");
-    }
 
 
 }
