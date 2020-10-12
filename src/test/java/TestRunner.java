@@ -2,8 +2,8 @@ import Pages.DcsHome.DcsDashBoard;
 import Pages.Flights.Flights;
 import Pages.HomePage.LoginPage;
 import Pages.MainMenu.MainMenu;
-import Utils.Utils;
 import Utils.Retry;
+import Utils.Utils;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
@@ -13,7 +13,10 @@ import jxl.read.biff.BiffException;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.logging.LogEntries;
+import org.openqa.selenium.logging.LogType;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
 
@@ -46,7 +49,7 @@ public class TestRunner extends Utils {
     public static void startTest() {
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy MM dd HH:mm/");
         LocalDateTime now = LocalDateTime.now();
-        System.out.println(dtf.format(now));
+        System.out.println(dtf.format(now) + ": Test suite started ");
         report = new ExtentReports(System.getProperty("user.dir") + "/Extent_Reports/" +  dtf.format(now) + "Test_Result.html", true);
         test = report.startTest("Test Result");
 
@@ -83,6 +86,7 @@ public class TestRunner extends Utils {
             newMainMenu.clickLogOut();*/
             currerntThreadId();
             //System.out.println("Login method thread id:" +Thread.currentThread().getId());
+            Assert.assertEquals(driver.getCurrentUrl(), "https://dcsqa.avtra.com/dcs/#/login/en/IR");
 
 
     }
@@ -194,6 +198,8 @@ public class TestRunner extends Utils {
         Thread.sleep(2000);
         newDashBoard.searchFlight(flightDesignator);
         newDashBoard.loadCheckInFlight();
+        LogEntries logs = driver.manage().logs().get(LogType.BROWSER);
+
     }
 
     @Test (priority = 6 , retryAnalyzer = Retry.class)
@@ -219,7 +225,7 @@ public class TestRunner extends Utils {
         test.log(LogStatus.INFO,  driver +" - Test Case " + result.getName() + " Running");
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy MM dd HH:mm/");
         LocalDateTime now = LocalDateTime.now();
-        System.out.println(dtf.format(now));
+        //System.out.println(dtf.format(now));
 
         if (ITestResult.FAILURE == result.getStatus()) {
             test.log(LogStatus.FAIL, driver + " - Test Case " + result.getName() + " Faild");
@@ -231,7 +237,9 @@ public class TestRunner extends Utils {
 
                 FileUtils.copyFile(source, new File(setProjectPath + "/Screen_Capture_Result/Failure_Screen_Capture/" + driver +  dtf.format(now) + result.getName() +  ".png"));
 
+                System.out.println("Current Method Running : " + result.getName());
                 System.out.println("Test Failed Screenshot taken " + result.getName());
+
             } catch (Exception e) {
 
                 System.out.println("Exception while taking screenshot " + e.getMessage());
@@ -248,6 +256,7 @@ public class TestRunner extends Utils {
 
                 FileUtils.copyFile(source, new File(setProjectPath + "/Screen_Capture_Result/Success_Screen_Capture/" + driver  +  dtf.format(now) + result.getName() +  ".png"));
 
+                System.out.println("Current Method Running : " + result.getName());
                 System.out.println("Test Passed Screenshot taken " + result.getName());
             } catch (Exception e) {
 
@@ -263,6 +272,7 @@ public class TestRunner extends Utils {
 
                 FileUtils.copyFile(source, new File(setProjectPath + "/Screen_Capture_Result/Skip_Screen_Capture/" + driver  +  dtf.format(now) + result.getName() +  ".png"));
 
+                System.out.println("Current Method Running : " + result.getName());
                 System.out.println("Test Skiped Screenshot taken " + result.getName());
             } catch (Exception e) {
 

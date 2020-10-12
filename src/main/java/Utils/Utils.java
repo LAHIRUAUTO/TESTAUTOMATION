@@ -101,7 +101,7 @@ public class Utils {
 
     @BeforeMethod
     public static void currerntThreadId (){
-        System.out.println("Current Thread ID: "+Thread.currentThread().getId());
+        //System.out.println("Current Thread ID: "+Thread.currentThread().getId());
     }
 
 

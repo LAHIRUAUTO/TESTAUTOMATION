@@ -14,10 +14,10 @@
                 <methods>
                     <include name="LogInToTheDCS" />
                     <include name="GotoMainMenu" />
-                    <exclude name="goToFlights" />
-                    <exclude name="GotoDashBoard" />
-                    <exclude name="LoadFlightToCheckIn" />
-                    <exclude name="LogOut" />
+                    <include name="goToFlights" />
+                    <include name="GotoDashBoard" />
+                    <include name="LoadFlightToCheckIn" />
+                    <include name="LogOut" />
                 </methods>
             </class>
         </classes>
