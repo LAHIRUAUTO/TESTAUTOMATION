@@ -2,17 +2,17 @@
 
 
 
-2020 10 12 13:12/: Test suite started 
+2020 10 12 17:34/: Test suite started 
 log4j:ERROR Could not connect to remote log4j server at [localhost]. We will try again later.
 
 
 
 
-Starting ChromeDriver 83.0.4103.61 (94f915a8d7c408b09cc7352161ad592299f384d2-refs/branch-heads/4103@{#561}) on port 31218
+Starting ChromeDriver 83.0.4103.61 (94f915a8d7c408b09cc7352161ad592299f384d2-refs/branch-heads/4103@{#561}) on port 30589
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-Oct 12, 2020 1:12:19 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+Oct 12, 2020 5:34:18 PM org.openqa.selenium.remote.ProtocolHandshake createSession
 INFO: Detected dialect: W3C
 
 
@@ -20,20 +20,9 @@ INFO: Detected dialect: W3C
 
 
 
+Test Case Execution Started at: 2020 10 12 17:34/
 
-
-Running the Test Case : LogInToTheDCS
-Test Passed Screenshot taken LogInToTheDCS
-
-
-
-
-
-
-
-
-Running the Test Case : GotoMainMenu
-Test Passed Screenshot taken GotoMainMenu
+Test Case: LogInToTheDCS - PASSED
 
 
 
@@ -41,19 +30,9 @@ Test Passed Screenshot taken GotoMainMenu
 
 
 
+Test Case Execution Started at: 2020 10 12 17:34/
 
-Running the Test Case : goToFlights
-Test Passed Screenshot taken goToFlights
-
-
-
-
-
-
-
-
-Running the Test Case : GotoDashBoard
-Test Passed Screenshot taken GotoDashBoard
+Test Case: GotoMainMenu - PASSED
 
 
 
@@ -61,16 +40,38 @@ Test Passed Screenshot taken GotoDashBoard
 
 
 
+Test Case Execution Started at: 2020 10 12 17:34/
 
-
-Running the Test Case : LoadFlightToCheckIn
-Test Skiped Screenshot taken LoadFlightToCheckIn
-
-
+Test Case: goToFlights - PASSED
 
 
 
 
+
+
+
+Test Case Execution Started at: 2020 10 12 17:34/
+
+Test Case: GotoDashBoard - PASSED
+
+
+
+
+
+
+
+Test Case Execution Started at: 2020 10 12 17:34/
+
+
+Test Case: LoadFlightToCheckIn - SKIPPED
+
+
+
+
+
+
+
+Test Case Execution Started at: 2020 10 12 17:34/
 
 
 
@@ -81,8 +82,8 @@ For documentation on this error, please visit: https://www.seleniumhq.org/except
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'dell-inspiron-5559', ip: '192.168.1.123', os.name: 'Linux', os.arch: 'amd64', os.version: '5.3.0-59-generic', java.version: '11.0.7'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 83.0.4103.97, chrome: {chromedriverVersion: 83.0.4103.61 (94f915a8d7c40..., userDataDir: /tmp/.org.chromium.Chromium...}, goog:chromeOptions: {debuggerAddress: localhost:36007}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
-Session ID: a261bd65cfdbf2f94844f32c4c054cd3
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 83.0.4103.97, chrome: {chromedriverVersion: 83.0.4103.61 (94f915a8d7c40..., userDataDir: /tmp/.org.chromium.Chromium...}, goog:chromeOptions: {debuggerAddress: localhost:40657}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: c09e53c09e0b6ce313d70bbce249da1d
 *** Element info: {Using=xpath, value=/html/body/app-root/div/div[1]/app-home/main/div/div/main/div/section[1]/div/div/div/ngx-slick/div/div/div[1]/h5/a
 }
 
@@ -119,9 +120,7 @@ Session ID: a261bd65cfdbf2f94844f32c4c054cd3
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
 	at java.base/java.lang.Thread.run(Thread.java:834)
 
-
-Running the Test Case : LoadFlightToCheckIn
-Test Failed Screenshot taken LoadFlightToCheckIn
+Test Case: LoadFlightToCheckIn - FAILED
 
 
 
@@ -129,25 +128,26 @@ Test Failed Screenshot taken LoadFlightToCheckIn
 
 
 
+Test Case Execution Started at: 2020 10 12 17:35/
 
-Running the Test Case : LogOut
-Test Passed Screenshot taken LogOut
-
-
-0    DEBUG [TestNG-test=Chrome Suite-2] freemarker.cache     - Couldn't find template in cache for "Extent.ftl"("en_US", UTF-8, parsed); will try to load it.
-2    DEBUG [TestNG-test=Chrome Suite-2] freemarker.cache     - TemplateLoader.findTemplateSource("Extent_en_US.ftl"): Not found
-3    DEBUG [TestNG-test=Chrome Suite-2] freemarker.cache     - TemplateLoader.findTemplateSource("Extent_en.ftl"): Not found
-4    DEBUG [TestNG-test=Chrome Suite-2] freemarker.cache     - TemplateLoader.findTemplateSource("Extent.ftl"): Found
-4    DEBUG [TestNG-test=Chrome Suite-2] freemarker.cache     - Loading template for "Extent.ftl"("en_US", UTF-8, parsed) from "jar:file:/home/user/.m2/repository/com/relevantcodes/extentreports/2.41.2/extentreports-2.41.2.jar!/com/relevantcodes/extentreports/view/Extent.ftl"
+Test Case: LogOut - PASSED
 
 
 
+0    DEBUG [TestNG-test=Chrome Suite-1] freemarker.cache     - Couldn't find template in cache for "Extent.ftl"("en_US", UTF-8, parsed); will try to load it.
+5    DEBUG [TestNG-test=Chrome Suite-1] freemarker.cache     - TemplateLoader.findTemplateSource("Extent_en_US.ftl"): Not found
+8    DEBUG [TestNG-test=Chrome Suite-1] freemarker.cache     - TemplateLoader.findTemplateSource("Extent_en.ftl"): Not found
+9    DEBUG [TestNG-test=Chrome Suite-1] freemarker.cache     - TemplateLoader.findTemplateSource("Extent.ftl"): Found
+9    DEBUG [TestNG-test=Chrome Suite-1] freemarker.cache     - Loading template for "Extent.ftl"("en_US", UTF-8, parsed) from "jar:file:/home/user/.m2/repository/com/relevantcodes/extentreports/2.41.2/extentreports-2.41.2.jar!/com/relevantcodes/extentreports/view/Extent.ftl"
 
 
 
-Oct 12, 2020 1:13:11 PM org.openqa.selenium.remote.DesiredCapabilities firefox
+
+
+
+Oct 12, 2020 5:35:10 PM org.openqa.selenium.remote.DesiredCapabilities firefox
 INFO: Using `new FirefoxOptions()` is preferred to `DesiredCapabilities.firefox()`
-Oct 12, 2020 1:13:15 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+Oct 12, 2020 5:35:15 PM org.openqa.selenium.remote.ProtocolHandshake createSession
 INFO: Detected dialect: OSS
 
 
@@ -155,20 +155,9 @@ INFO: Detected dialect: OSS
 
 
 
+Test Case Execution Started at: 2020 10 12 17:35/
 
-
-Running the Test Case : LogInToTheDCS
-Test Passed Screenshot taken LogInToTheDCS
-
-
-
-
-
-
-
-
-Running the Test Case : GotoMainMenu
-Test Passed Screenshot taken GotoMainMenu
+Test Case: LogInToTheDCS - PASSED
 
 
 
@@ -176,16 +165,28 @@ Test Passed Screenshot taken GotoMainMenu
 
 
 
+Test Case Execution Started at: 2020 10 12 17:35/
 
-
-Running the Test Case : goToFlights
-Test Skiped Screenshot taken goToFlights
-
-
+Test Case: GotoMainMenu - PASSED
 
 
 
 
+
+
+
+Test Case Execution Started at: 2020 10 12 17:35/
+
+
+Test Case: goToFlights - SKIPPED
+
+
+
+
+
+
+
+Test Case Execution Started at: 2020 10 12 17:35/
 
 
 
@@ -230,15 +231,12 @@ Caused by: org.openqa.selenium.interactions.MoveTargetOutOfBoundsException: Offs
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'dell-inspiron-5559', ip: '192.168.1.123', os.name: 'Linux', os.arch: 'amd64', os.version: '5.3.0-59-generic', java.version: '11.0.7'
 Driver info: driver.version: unknown
-	at <anonymous class>.FirefoxDriver.prototype.mouseMoveTo(file:///tmp/anonymous5868061372624345461webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:12151)
-	at <anonymous class>.DelayedCommand.prototype.executeInternal_/k(file:///tmp/anonymous5868061372624345461webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:13388)
-	at <anonymous class>.DelayedCommand.prototype.executeInternal_(file:///tmp/anonymous5868061372624345461webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:13393)
-	at <anonymous class>.DelayedCommand.prototype.execute/<(file:///tmp/anonymous5868061372624345461webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:13335)
+	at <anonymous class>.FirefoxDriver.prototype.mouseMoveTo(file:///tmp/anonymous4246251493693330102webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:12151)
+	at <anonymous class>.DelayedCommand.prototype.executeInternal_/k(file:///tmp/anonymous4246251493693330102webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:13388)
+	at <anonymous class>.DelayedCommand.prototype.executeInternal_(file:///tmp/anonymous4246251493693330102webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:13393)
+	at <anonymous class>.DelayedCommand.prototype.execute/<(file:///tmp/anonymous4246251493693330102webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:13335)
 
-
-Running the Test Case : goToFlights
-Test Failed Screenshot taken goToFlights
-
+Test Case: goToFlights - FAILED
 
 
 
@@ -246,14 +244,17 @@ Test Failed Screenshot taken goToFlights
 
 
 
-Running the Test Case : GotoDashBoard
-Test Passed Screenshot taken GotoDashBoard
+Test Case Execution Started at: 2020 10 12 17:35/
+
+Test Case: GotoDashBoard - PASSED
 
 
 
 
 
 
+
+Test Case Execution Started at: 2020 10 12 17:35/
 
 
 
@@ -299,13 +300,10 @@ For documentation on this error, please visit: https://www.seleniumhq.org/except
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'dell-inspiron-5559', ip: '192.168.1.123', os.name: 'Linux', os.arch: 'amd64', os.version: '5.3.0-59-generic', java.version: '11.0.7'
 Driver info: driver.version: unknown
-	at <anonymous class>.FirefoxDriver.prototype.findElementInternal_(file:///tmp/anonymous5868061372624345461webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:11878)
-	at <anonymous class>.fxdriver.Timer.prototype.setTimeout/<.notify(file:///tmp/anonymous5868061372624345461webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:918)
+	at <anonymous class>.FirefoxDriver.prototype.findElementInternal_(file:///tmp/anonymous4246251493693330102webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:11878)
+	at <anonymous class>.fxdriver.Timer.prototype.setTimeout/<.notify(file:///tmp/anonymous4246251493693330102webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:918)
 
-
-Running the Test Case : LoadFlightToCheckIn
-Test Failed Screenshot taken LoadFlightToCheckIn
-
+Test Case: LoadFlightToCheckIn - FAILED
 
 
 
@@ -313,15 +311,18 @@ Test Failed Screenshot taken LoadFlightToCheckIn
 
 
 
-
-Running the Test Case : LogOut
-Test Skiped Screenshot taken LogOut
+Test Case Execution Started at: 2020 10 12 17:36/
 
 
-
+Test Case: LogOut - SKIPPED
 
 
 
+
+
+
+
+Test Case Execution Started at: 2020 10 12 17:36/
 
 
 
@@ -366,21 +367,20 @@ Caused by: org.openqa.selenium.interactions.MoveTargetOutOfBoundsException: Offs
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'dell-inspiron-5559', ip: '192.168.1.123', os.name: 'Linux', os.arch: 'amd64', os.version: '5.3.0-59-generic', java.version: '11.0.7'
 Driver info: driver.version: unknown
-	at <anonymous class>.FirefoxDriver.prototype.mouseMoveTo(file:///tmp/anonymous5868061372624345461webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:12151)
-	at <anonymous class>.DelayedCommand.prototype.executeInternal_/k(file:///tmp/anonymous5868061372624345461webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:13388)
-	at <anonymous class>.DelayedCommand.prototype.executeInternal_(file:///tmp/anonymous5868061372624345461webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:13393)
-	at <anonymous class>.DelayedCommand.prototype.execute/<(file:///tmp/anonymous5868061372624345461webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:13335)
+	at <anonymous class>.FirefoxDriver.prototype.mouseMoveTo(file:///tmp/anonymous4246251493693330102webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:12151)
+	at <anonymous class>.DelayedCommand.prototype.executeInternal_/k(file:///tmp/anonymous4246251493693330102webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:13388)
+	at <anonymous class>.DelayedCommand.prototype.executeInternal_(file:///tmp/anonymous4246251493693330102webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:13393)
+	at <anonymous class>.DelayedCommand.prototype.execute/<(file:///tmp/anonymous4246251493693330102webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:13335)
+
+Test Case: LogOut - FAILED
 
 
-Running the Test Case : LogOut
-Test Failed Screenshot taken LogOut
 
-
-46571 DEBUG [TestNG-test=Firefox Suite-1] freemarker.cache     - Couldn't find template in cache for "Extent.ftl"("en_US", UTF-8, parsed); will try to load it.
-46571 DEBUG [TestNG-test=Firefox Suite-1] freemarker.cache     - TemplateLoader.findTemplateSource("Extent_en_US.ftl"): Not found
-46572 DEBUG [TestNG-test=Firefox Suite-1] freemarker.cache     - TemplateLoader.findTemplateSource("Extent_en.ftl"): Not found
-46572 DEBUG [TestNG-test=Firefox Suite-1] freemarker.cache     - TemplateLoader.findTemplateSource("Extent.ftl"): Found
-46572 DEBUG [TestNG-test=Firefox Suite-1] freemarker.cache     - Loading template for "Extent.ftl"("en_US", UTF-8, parsed) from "jar:file:/home/user/.m2/repository/com/relevantcodes/extentreports/2.41.2/extentreports-2.41.2.jar!/com/relevantcodes/extentreports/view/Extent.ftl"
+53411 DEBUG [TestNG-test=Firefox Suite-2] freemarker.cache     - Couldn't find template in cache for "Extent.ftl"("en_US", UTF-8, parsed); will try to load it.
+53427 DEBUG [TestNG-test=Firefox Suite-2] freemarker.cache     - TemplateLoader.findTemplateSource("Extent_en_US.ftl"): Not found
+53427 DEBUG [TestNG-test=Firefox Suite-2] freemarker.cache     - TemplateLoader.findTemplateSource("Extent_en.ftl"): Not found
+53427 DEBUG [TestNG-test=Firefox Suite-2] freemarker.cache     - TemplateLoader.findTemplateSource("Extent.ftl"): Found
+53427 DEBUG [TestNG-test=Firefox Suite-2] freemarker.cache     - Loading template for "Extent.ftl"("en_US", UTF-8, parsed) from "jar:file:/home/user/.m2/repository/com/relevantcodes/extentreports/2.41.2/extentreports-2.41.2.jar!/com/relevantcodes/extentreports/view/Extent.ftl"
 
 
 
@@ -419,21 +419,27 @@ java.lang.IllegalStateException: The driver executable does not exist: /home/use
 
 
 
+Test Case: LogInToTheDCS - SKIPPED
 
 
 
+Test Case: GotoMainMenu - SKIPPED
 
 
 
+Test Case: goToFlights - SKIPPED
 
 
 
+Test Case: GotoDashBoard - SKIPPED
 
 
 
+Test Case: LoadFlightToCheckIn - SKIPPED
 
 
 
+Test Case: LogOut - SKIPPED
 
 ===============================================
 DCS TEST SUITE

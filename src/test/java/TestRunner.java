@@ -237,8 +237,8 @@ public class TestRunner extends Utils {
 
                 FileUtils.copyFile(source, new File(setProjectPath + "/Screen_Capture_Result/Failure_Screen_Capture/" + driver +  dtf.format(now) + result.getName() +  ".png"));
 
-                System.out.println("Running the Test Case : " + result.getName());
-                System.out.println("Test Failed Screenshot taken " + result.getName());
+                //System.out.println("Running the Test Case : " + result.getName());
+                //System.out.println("Test Failed Screenshot taken " + result.getName());
 
             } catch (Exception e) {
 
@@ -256,8 +256,8 @@ public class TestRunner extends Utils {
 
                 FileUtils.copyFile(source, new File(setProjectPath + "/Screen_Capture_Result/Success_Screen_Capture/" + driver  +  dtf.format(now) + result.getName() +  ".png"));
 
-                System.out.println("Running the Test Case : " + result.getName());
-                System.out.println("Test Passed Screenshot taken " + result.getName());
+                //System.out.println("Running the Test Case : " + result.getName());
+                //System.out.println("Test Passed Screenshot taken " + result.getName());
             } catch (Exception e) {
 
                 System.out.println("Exception while taking screenshot " + e.getMessage());
@@ -272,8 +272,8 @@ public class TestRunner extends Utils {
 
                 FileUtils.copyFile(source, new File(setProjectPath + "/Screen_Capture_Result/Skip_Screen_Capture/" + driver  +  dtf.format(now) + result.getName() +  ".png"));
 
-                System.out.println("Running the Test Case : " + result.getName());
-                System.out.println("Test Skiped Screenshot taken " + result.getName());
+                //System.out.println("Running the Test Case : " + result.getName());
+                //System.out.println("Test Skiped Screenshot taken " + result.getName());
             } catch (Exception e) {
 
                 System.out.println("Exception while taking screenshot " + e.getMessage());
