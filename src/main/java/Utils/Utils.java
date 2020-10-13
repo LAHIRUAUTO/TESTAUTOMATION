@@ -41,9 +41,9 @@ public class Utils {
 
     }
 
-    @Parameters("browser")
+    @Parameters({"browser", "url"})
     @BeforeClass
-    public static void Intialize(String browser) throws Exception {
+    public static void Intialize(String browser, String url) throws Exception {
 
         //Load Property File
         File src = new File("/home/user/Desktop/Sample_Structure_Test_Automation_Project with Page Factory/App.properties");
@@ -76,21 +76,21 @@ public class Utils {
             capabilities.setPlatform(Platform.LINUX);
             capabilities.setCapability("marionette", false);
             driver = new FirefoxDriver(capabilities);
-            driver.get("https://dcsqa.avtra.com/dcs/#/login/en/IR");
+            driver.get(url);
             driver.manage().window().maximize();
         } else if (browser.equalsIgnoreCase("chrome")) {
             //set path to chromedriver.exe
             System.setProperty(setGeckoDriver, setChromeDriver);
             //create chrome instance
             driver = new ChromeDriver();
-            driver.get("https://dcsqa.avtra.com/dcs/#/login/en/IR");
+            driver.get(url);
             driver.manage().window().maximize();
         } else if (browser.equalsIgnoreCase("opera")) {
             //set path to opera driver
             System.setProperty("webdriver.opera.driver", setOperaDriver);
             //create Opera instance
             driver = new OperaDriver();
-            driver.get("https://dcsqa.avtra.com/dcs/#/login/en/IR");
+            driver.get(url);
             driver.manage().window().maximize();
         } else {
             //If no browser passed throw exception

@@ -1,32 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="DCS TEST SUITE" thread-count="2" parallel="methods">
+    <parameter name="url" value="https://dcsqa.avtra.com/dcs/#/login/en/IR"/>
     <listeners>
-        <listener class-name="Utils.Log" />
+        <listener class-name="Utils.Log"/>
     </listeners>
-    <test verbose="2" preserve-order="true" name= "Chrome Suite">
-        <parameter name="browser" value="Chrome" />
+    <test verbose="2" preserve-order="true" name="Chrome Suite">
+        <parameter name="browser" value="Chrome"/>
         <classes>
             <class name="TestRunner"/>
         </classes>
     </test>
-    <test verbose="2" preserve-order="true" name= "Firefox Suite">
-        <parameter name="browser" value="Firefox" />
+    <test verbose="2" preserve-order="true" name="Firefox Suite">
+        <parameter name="browser" value="Firefox"/>
         <classes>
             <class name="TestRunner">
                 <methods>
-                    <include name="LogInToTheDCS" />
-                    <include name="GotoMainMenu" />
-                    <include name="goToFlights" />
-                    <include name="GotoDashBoard" />
-                    <include name="LoadFlightToCheckIn" />
-                    <include name="LogOut" />
+                    <include name="LogInToTheDCS"/>
+                    <include name="GotoMainMenu"/>
+                    <include name="goToFlights"/>
+                    <include name="GotoDashBoard"/>
+                    <include name="LoadFlightToCheckIn"/>
+                    <include name="LogOut"/>
                 </methods>
             </class>
         </classes>
     </test>
-    <test verbose="2" preserve-order="true" name= "Opera Suite">
-        <parameter name="browser" value="Opera" />
+    <test verbose="2" preserve-order="true" name="Opera Suite">
+        <parameter name="browser" value="Opera"/>
         <classes>
             <class name="TestRunner">
             </class>
