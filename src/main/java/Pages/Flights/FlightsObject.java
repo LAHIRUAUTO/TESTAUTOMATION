@@ -1,6 +1,6 @@
 package Pages.Flights;
 
-import Utils.Utils;
+import Utilities.Utils;
 
 
 public  class FlightsObject extends Utils {

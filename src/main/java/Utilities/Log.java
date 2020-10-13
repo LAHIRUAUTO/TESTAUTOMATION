@@ -1,4 +1,4 @@
-package Utils;
+package Utilities;
 
 import org.testng.IClass;
 import org.testng.ITestResult;

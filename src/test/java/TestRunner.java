@@ -2,8 +2,8 @@ import Pages.DcsHome.DcsDashBoard;
 import Pages.Flights.Flights;
 import Pages.HomePage.LoginPage;
 import Pages.MainMenu.MainMenu;
-import Utils.Retry;
-import Utils.Utils;
+import Utilities.Retry;
+import Utilities.Utils;
 import jxl.Sheet;
 import jxl.Workbook;
 import jxl.read.biff.BiffException;
@@ -12,7 +12,6 @@ import org.openqa.selenium.logging.LogType;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
 import java.io.FileInputStream;
 import java.io.IOException;
 

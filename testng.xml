@@ -3,10 +3,16 @@
 <suite name="DCS TEST SUITE" thread-count="2" parallel="methods">
     <parameter name="url" value="https://dcsqa.avtra.com/dcs/#/login/en/IR"/>
     <listeners>
-        <listener class-name="Utils.Log"/>
+        <listener class-name="Utilities.Log"/>
     </listeners>
     <test verbose="2" preserve-order="true" name="Chrome Suite">
         <parameter name="browser" value="Chrome"/>
+        <classes>
+            <class name="TestRunner"/>
+        </classes>
+    </test>
+    <test verbose="2" preserve-order="true" name="Chrome Headless Suite">
+        <parameter name="browser" value="Chromeheadless"/>
         <classes>
             <class name="TestRunner"/>
         </classes>
