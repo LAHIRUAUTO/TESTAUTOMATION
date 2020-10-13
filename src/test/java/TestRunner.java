@@ -20,8 +20,6 @@ import java.io.IOException;
 public class TestRunner extends Utils {
 
 
-
-
     public TestRunner() throws IOException, BiffException {
     }
 
@@ -32,25 +30,25 @@ public class TestRunner extends Utils {
     Sheet DashBoardSh = wb.getSheet("DashBoard");
 
 
-    @Test(priority = 1, retryAnalyzer = Retry.class)
+    @Test(priority = 1, retryAnalyzer = Retry.class, description = "DCS Log in test case")
     public void LogInToTheDCS() throws IOException, BiffException {
 
 
         String username = DcsLogginSh.getCell("A2").getContents();
         String password = DcsLogginSh.getCell("B2").getContents();
 
-            LoginPage newloginpage = PageFactory.initElements(driver, LoginPage.class);
-            MainMenu newMainMenu = PageFactory.initElements(driver, MainMenu.class);
+        LoginPage newloginpage = PageFactory.initElements(driver, LoginPage.class);
+        MainMenu newMainMenu = PageFactory.initElements(driver, MainMenu.class);
 
-            newloginpage.enterUsername(username);
-            newloginpage.enterPassword(password);
-            newloginpage.clicklogInButton();
+        newloginpage.enterUsername(username);
+        newloginpage.enterPassword(password);
+        newloginpage.clicklogInButton();
             /*newMainMenu.clickMainMenuLink();
             newMainMenu.gotoLogOutButtonLink();
             newMainMenu.clickLogOut();*/
-            currerntThreadId();
-            //System.out.println("Login method thread id:" +Thread.currentThread().getId());
-            Assert.assertEquals(driver.getCurrentUrl(), "https://dcsqa.avtra.com/dcs/#/login/en/IR");
+        currerntThreadId();
+        //System.out.println("Login method thread id:" +Thread.currentThread().getId());
+        Assert.assertEquals(driver.getCurrentUrl(), "https://dcsqa.avtra.com/dcs/#/login/en/IR");
 
 
     }
@@ -102,7 +100,7 @@ public class TestRunner extends Utils {
 
     }*/
 
-    @Test(dependsOnMethods = {"LogInToTheDCS"}, priority = 2 , retryAnalyzer = Retry.class)
+    @Test(dependsOnMethods = {"LogInToTheDCS"}, priority = 2, retryAnalyzer = Retry.class)
     public void GotoMainMenu() throws InterruptedException {
 
         MainMenu newMainMenu = PageFactory.initElements(driver, MainMenu.class);
@@ -111,7 +109,7 @@ public class TestRunner extends Utils {
 
     }
 
-    @Test(dependsOnMethods = {"LogInToTheDCS", "GotoMainMenu"}, priority = 3, enabled = true , retryAnalyzer = Retry.class)
+    @Test(dependsOnMethods = {"LogInToTheDCS", "GotoMainMenu"}, priority = 3, enabled = true, retryAnalyzer = Retry.class)
 
     public void goToFlights() throws InterruptedException {
 
@@ -123,7 +121,7 @@ public class TestRunner extends Utils {
 
     }
 
-    @Test(dependsOnMethods = {"LogInToTheDCS"}, priority = 4 , retryAnalyzer = Retry.class)
+    @Test(dependsOnMethods = {"LogInToTheDCS"}, priority = 4, retryAnalyzer = Retry.class)
     public void GotoDashBoard() throws InterruptedException {
         DcsDashBoard newDashBoard = PageFactory.initElements(driver, DcsDashBoard.class);
         Thread.sleep(2000);
@@ -131,7 +129,7 @@ public class TestRunner extends Utils {
         newDashBoard.checkDashBoardtitle();
     }
 
-    @Test(dependsOnMethods = {"LogInToTheDCS","GotoDashBoard"}, priority = 5 , retryAnalyzer = Retry.class)
+    @Test(dependsOnMethods = {"LogInToTheDCS", "GotoDashBoard"}, priority = 5, retryAnalyzer = Retry.class)
     public void LoadFlightToCheckIn() throws InterruptedException {
 
         String flightDesignator = DashBoardSh.getCell("A2").getContents();
@@ -143,15 +141,13 @@ public class TestRunner extends Utils {
 
     }
 
-    @Test (priority = 6 , retryAnalyzer = Retry.class)
-    public void LogOut (){
+    @Test(priority = 6, retryAnalyzer = Retry.class)
+    public void LogOut() {
         MainMenu newMainMenu = PageFactory.initElements(driver, MainMenu.class);
         newMainMenu.clickMainMenuLink();
         newMainMenu.gotoLogOutButtonLink();
         newMainMenu.clickLogOut();
     }
-
-
 
 
 }

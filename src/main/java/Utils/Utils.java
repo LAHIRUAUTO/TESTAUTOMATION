@@ -25,27 +25,28 @@ import java.util.concurrent.TimeUnit;
 //import org.openqa.selenium.*;
 
 
-
 public class Utils {
     public static WebDriver driver;
 
     static ExtentTest test;
     static ExtentReports report;
+
     @BeforeSuite
     public static void startTest() {
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy MM dd HH:mm/");
         LocalDateTime now = LocalDateTime.now();
         System.out.println(dtf.format(now) + ": Test suite started ");
-        report = new ExtentReports(System.getProperty("user.dir") + "/Extent_Reports/" +  dtf.format(now) + "Test_Result.html", true);
+        report = new ExtentReports(System.getProperty("user.dir") + "/Extent_Reports/" + dtf.format(now) + "Test_Result.html", true);
         test = report.startTest("Test Result");
 
     }
+
     @Parameters("browser")
     @BeforeClass
-    public static void Intialize (String browser) throws Exception {
+    public static void Intialize(String browser) throws Exception {
 
         //Load Property File
-        File src=new File("/home/user/Desktop/Sample_Structure_Test_Automation_Project with Page Factory/App.properties");
+        File src = new File("/home/user/Desktop/Sample_Structure_Test_Automation_Project with Page Factory/App.properties");
         FileInputStream objfile = new FileInputStream(src);
         Properties obj = new Properties();
         obj.load(objfile);
@@ -53,9 +54,6 @@ public class Utils {
         String setFirefoxDriver = obj.getProperty("FirefoxDriver");
         String setOperaDriver = obj.getProperty("OperaDriver");
         String setGeckoDriver = obj.getProperty("GeckoDriver");
-
-
-
 
 
         //Enable headless browser testing
@@ -68,7 +66,7 @@ public class Utils {
         //driver = new ChromeDriver(option);
 
         //Check if parameter passed from TestNG is 'firefox'
-        if(browser.equalsIgnoreCase("firefox")){
+        if (browser.equalsIgnoreCase("firefox")) {
             //create firefox instance
             System.setProperty(setGeckoDriver, setFirefoxDriver);
             DesiredCapabilities capabilities = new DesiredCapabilities();
@@ -80,41 +78,30 @@ public class Utils {
             driver = new FirefoxDriver(capabilities);
             driver.get("https://dcsqa.avtra.com/dcs/#/login/en/IR");
             driver.manage().window().maximize();
-        }
-
-        else if(browser.equalsIgnoreCase("chrome")){
+        } else if (browser.equalsIgnoreCase("chrome")) {
             //set path to chromedriver.exe
             System.setProperty(setGeckoDriver, setChromeDriver);
             //create chrome instance
             driver = new ChromeDriver();
             driver.get("https://dcsqa.avtra.com/dcs/#/login/en/IR");
             driver.manage().window().maximize();
-        }
-
-        else if(browser.equalsIgnoreCase("opera")){
+        } else if (browser.equalsIgnoreCase("opera")) {
             //set path to opera driver
             System.setProperty("webdriver.opera.driver", setOperaDriver);
             //create Opera instance
             driver = new OperaDriver();
             driver.get("https://dcsqa.avtra.com/dcs/#/login/en/IR");
             driver.manage().window().maximize();
-        }
-
-        else{
+        } else {
             //If no browser passed throw exception
             throw new Exception("Browser is not correct");
         }
 
 
-
-
-
-
-
     }
 
     @BeforeMethod
-    public static void currerntThreadId (){
+    public static void currerntThreadId() {
         //System.out.println("Current Thread ID: "+Thread.currentThread().getId());
     }
 
@@ -125,19 +112,15 @@ public class Utils {
     }
 
 
-    public static WebElement elementByXpath(String xpath){
+    public static WebElement elementByXpath(String xpath) {
         return driver.findElement(By.xpath(xpath));
 
     }
 
-    public void mouseHover (WebElement element) {
+    public void mouseHover(WebElement element) {
         Actions action = new Actions(driver);
         action.moveToElement(element).perform();
     }
-
-
-
-
 
 
     @AfterMethod
@@ -152,7 +135,7 @@ public class Utils {
         String setProjectPath = obj.getProperty("ProjectPath");
 
 
-        test.log(LogStatus.INFO,  driver +" - Test Case " + result.getName() + " Running");
+        test.log(LogStatus.INFO, driver + " - Test Case " + result.getName() + " Running");
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy MM dd HH:mm/");
         LocalDateTime now = LocalDateTime.now();
         //System.out.println(dtf.format(now));
@@ -165,7 +148,7 @@ public class Utils {
 
                 File source = ts.getScreenshotAs(OutputType.FILE);
 
-                FileUtils.copyFile(source, new File(setProjectPath + "/Screen_Capture_Result/Failure_Screen_Capture/" + driver +  dtf.format(now) + result.getName() +  ".png"));
+                FileUtils.copyFile(source, new File(setProjectPath + "/Screen_Capture_Result/Failure_Screen_Capture/" + driver + dtf.format(now) + result.getName() + ".png"));
 
                 //System.out.println("Running the Test Case : " + result.getName());
                 //System.out.println("Test Failed Screenshot taken " + result.getName());
@@ -177,14 +160,14 @@ public class Utils {
 
 
         } else if (ITestResult.SUCCESS == result.getStatus()) {
-            test.log(LogStatus.PASS, driver +" - Test Case " + result.getName() + " Passed");
+            test.log(LogStatus.PASS, driver + " - Test Case " + result.getName() + " Passed");
 
             try {
                 TakesScreenshot ts = (TakesScreenshot) driver;
 
                 File source = ts.getScreenshotAs(OutputType.FILE);
 
-                FileUtils.copyFile(source, new File(setProjectPath + "/Screen_Capture_Result/Success_Screen_Capture/" + driver  +  dtf.format(now) + result.getName() +  ".png"));
+                FileUtils.copyFile(source, new File(setProjectPath + "/Screen_Capture_Result/Success_Screen_Capture/" + driver + dtf.format(now) + result.getName() + ".png"));
 
                 //System.out.println("Running the Test Case : " + result.getName());
                 //System.out.println("Test Passed Screenshot taken " + result.getName());
@@ -200,7 +183,7 @@ public class Utils {
 
                 File source = ts.getScreenshotAs(OutputType.FILE);
 
-                FileUtils.copyFile(source, new File(setProjectPath + "/Screen_Capture_Result/Skip_Screen_Capture/" + driver  +  dtf.format(now) + result.getName() +  ".png"));
+                FileUtils.copyFile(source, new File(setProjectPath + "/Screen_Capture_Result/Skip_Screen_Capture/" + driver + dtf.format(now) + result.getName() + ".png"));
 
                 //System.out.println("Running the Test Case : " + result.getName());
                 //System.out.println("Test Skiped Screenshot taken " + result.getName());
@@ -217,8 +200,9 @@ public class Utils {
         report.flush();
 
     }
+
     @AfterClass
-    public static void close () {
+    public static void close() {
 
         driver.close();
     }
