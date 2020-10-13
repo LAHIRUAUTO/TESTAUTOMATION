@@ -139,11 +139,7 @@ public class Utils extends BrowserBase {
 
     }
 
-    @AfterClass
-    public static void close() {
 
-        driver.close();
-    }
 
     @AfterSuite
     public static void endSuite() throws MessagingException {
