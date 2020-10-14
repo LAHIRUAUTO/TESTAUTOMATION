@@ -103,27 +103,47 @@ public class TestRunner extends Utils {
     public void GotoMainMenu() throws InterruptedException {
 
         MainMenu newMainMenu = PageFactory.initElements(driver, MainMenu.class);
-        Thread.sleep(2000);
         newMainMenu.clickMainMenuLink();
 
     }
 
     @Test(dependsOnMethods = {"LogInToTheDCS", "GotoMainMenu"}, priority = 3, enabled = true, retryAnalyzer = Retry.class)
 
-    public void goToFlights() throws InterruptedException {
+    public void createFlight() throws InterruptedException {
 
         Flights newFlight = PageFactory.initElements(driver, Flights.class);
-        Thread.sleep(1000);
         newFlight.gotoFlightManagerLink();
-        Thread.sleep(1000);
         newFlight.clickFlight();
+        newFlight.clickWrapper();
+        newFlight.clickAddFlight();
+        Thread.sleep(2000);
+        newFlight.selectTimeMode();
+        newFlight.selectOperationType();
+        newFlight.selecrAircraftModel();
+        newFlight.enterFlightNumber();
+        newFlight.selectSeatMap();
+        newFlight.selectOperatedBy();
+        newFlight.selectFlightType();
+        newFlight.selectAircradtTail();
+        newFlight.openCallender();
+        newFlight.selectDepartureDate();
+        newFlight.selectSsrTemplate();
+        newFlight.selectDepartureAirport();
+        newFlight.selectArrivalAirport();
+        newFlight.enterDepartureTimeHH();
+        newFlight.enterArrivalTimeHH();
+        newFlight.enterDepartureTimeMM();
+        newFlight.enterArrivalTimeMM();
+        newFlight.enterDepartureOffSet();
+        newFlight.enterArrivalOffSet();
+        //newFlight.clicksaveButton();
+
 
     }
 
     @Test(dependsOnMethods = {"LogInToTheDCS"}, priority = 4, retryAnalyzer = Retry.class)
     public void GotoDashBoard() throws InterruptedException {
         DcsDashBoard newDashBoard = PageFactory.initElements(driver, DcsDashBoard.class);
-        Thread.sleep(2000);
         newDashBoard.clickDashBoard();
         newDashBoard.checkDashBoardtitle();
     }
@@ -133,7 +153,6 @@ public class TestRunner extends Utils {
 
         String flightDesignator = DashBoardSh.getCell("A2").getContents();
         DcsDashBoard newDashBoard = PageFactory.initElements(driver, DcsDashBoard.class);
-        Thread.sleep(2000);
         newDashBoard.searchFlight(flightDesignator);
         newDashBoard.loadCheckInFlight();
         LogEntries logs = driver.manage().logs().get(LogType.BROWSER);

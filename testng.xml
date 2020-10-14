@@ -14,7 +14,16 @@
     <test verbose="2" preserve-order="true" name="Chrome Suite">
         <parameter name="browser" value="Chrome"/>
         <classes>
-            <class name="TestRunner"/>
+            <class name="TestRunner">
+            <!--<methods>
+                <include name="LogInToTheDCS"/>
+                <include name="GotoMainMenu"/>
+                <include name="createFlight"/>
+                <exclude name="GotoDashBoard"/>
+                <exclude name="LoadFlightToCheckIn"/>
+                <exclude name="LogOut"/>
+            </methods>-->
+            </class>
         </classes>
     </test>
     <test verbose="2" preserve-order="true" name="Firefox Suite">

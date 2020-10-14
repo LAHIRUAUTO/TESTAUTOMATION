@@ -9,6 +9,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
 
@@ -53,6 +54,12 @@ public class Utils extends BrowserBase {
     public static WebElement elementByXpath(String xpath) {
         return driver.findElement(By.xpath(xpath));
 
+    }
+
+
+    public void selectelementByText(WebElement element, String text) {
+        Select select = new Select(element);
+        select.selectByVisibleText(text);
     }
 
     public void mouseHover(WebElement element) {
