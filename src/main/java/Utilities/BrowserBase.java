@@ -33,17 +33,6 @@ public class BrowserBase {
         String setOperaDriver = obj.getProperty("OperaDriver");
         String setGeckoDriver = obj.getProperty("GeckoDriver");
 
-
-        //Enable headless browser testing
-        // Create Object of ChromeOption Class
-        //ChromeOptions option=new ChromeOptions();
-
-        //Set the setHeadless is equal to true which will run test in Headless mode
-       // option.setHeadless(true);
-
-        //driver = new ChromeDriver(option);
-
-        //Check if parameter passed from TestNG is 'firefox'
         if (browser.equalsIgnoreCase("firefox")) {
             //create firefox instance
             System.setProperty(setGeckoDriver, setFirefoxDriver);
@@ -67,7 +56,7 @@ public class BrowserBase {
 
             //set path to chromedriver.exe
             System.setProperty(setGeckoDriver, setChromeDriver);
-            ChromeOptions option=new ChromeOptions();
+            ChromeOptions option = new ChromeOptions();
             option.setHeadless(true);
             //create chrome instance
             driver = new ChromeDriver(option);
@@ -86,9 +75,8 @@ public class BrowserBase {
         }
 
 
-
-
     }
+
     @AfterClass
     public static void close() {
 
