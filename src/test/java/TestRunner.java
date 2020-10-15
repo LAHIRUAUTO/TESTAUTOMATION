@@ -27,6 +27,7 @@ public class TestRunner extends Utils {
     Workbook wb = Workbook.getWorkbook(fs);
     Sheet DcsLogginSh = wb.getSheet("DcsLoggin");
     Sheet DashBoardSh = wb.getSheet("DashBoard");
+    Sheet CreateFlight = wb.getSheet("Create_Flight");
 
 
     @Test(priority = 1, retryAnalyzer = Retry.class, description = "DCS Log in test case")
@@ -100,34 +101,57 @@ public class TestRunner extends Utils {
     @Test(dependsOnMethods = {"LogInToTheDCS", "GotoMainMenu"}, priority = 3, enabled = true, retryAnalyzer = Retry.class)
 
     public void createFlight() throws InterruptedException {
+        String timeMode = CreateFlight.getCell("B2").getContents();
+        String operationType = CreateFlight.getCell("B3").getContents();
+        String aircraftModel = CreateFlight.getCell("B4").getContents();
+        String flightNumber = CreateFlight.getCell("B5").getContents();
+        String seatMap = CreateFlight.getCell("B6").getContents();
+        String operatedby = CreateFlight.getCell("B7").getContents();
+        String flightType = CreateFlight.getCell("B8").getContents();
+        String aircraftTail = CreateFlight.getCell("B9").getContents();
+        String departureDate = CreateFlight.getCell("B10").getContents();
+        String ssrTemplate = CreateFlight.getCell("B11").getContents();
+        String departureAirport = CreateFlight.getCell("B12").getContents();
+        String arrivalAirport = CreateFlight.getCell("B13").getContents();
+        String departureTimHH = CreateFlight.getCell("B14").getContents();
+        String arrivalTimeHH = CreateFlight.getCell("B15").getContents();
+        String departureTimMM = CreateFlight.getCell("B16").getContents();
+        String arrivalTimeMM = CreateFlight.getCell("B17").getContents();
+        String departureOffset = CreateFlight.getCell("B18").getContents();
+        String arrivalOffset = CreateFlight.getCell("B19").getContents();
+        String departureTerminal = CreateFlight.getCell("B20").getContents();
+        String arrivalTerminal = CreateFlight.getCell("B21").getContents();
+
+
 
         Flights newFlight = PageFactory.initElements(driver, Flights.class);
         newFlight.gotoFlightManagerLink();
         newFlight.clickFlight();
         newFlight.clickWrapper();
         newFlight.clickAddFlight();
-        newFlight.selectTimeMode("UTC");
-        newFlight.selectOperationType("Charter");
-        newFlight.selecrAircraftModel("300B4-605R-J18Y243");
-        newFlight.enterFlightNumber("3003");
-        newFlight.selectSeatMap("SEAT300B4605RJ18Y243");
-        newFlight.selectOperatedBy("IR");
-        newFlight.selectFlightType("Domestic");
-        newFlight.selectAircradtTail("EP-IBB");
+        newFlight.selectTimeMode(timeMode);
+        newFlight.selectOperationType(operationType);
+        newFlight.selecrAircraftModel(aircraftModel);
+        newFlight.enterFlightNumber(flightNumber);
+        newFlight.selectSeatMap(seatMap);
+        newFlight.selectOperatedBy(operatedby);
+        newFlight.selectFlightType(flightType);
+        newFlight.selectAircradtTail(aircraftTail);
         newFlight.openCallender();
-        newFlight.selectDepartureDate("25");
-        newFlight.selectSsrTemplate("SSR300B4605RJ18Y243");
-        newFlight.selectDepartureAirport("IKA");
-        newFlight.selectArrivalAirport("IST");
-        newFlight.enterDepartureTimeHH("06");
-        newFlight.enterArrivalTimeHH("08");
-        newFlight.enterDepartureTimeMM("00");
-        newFlight.enterArrivalTimeMM("30");
-        newFlight.enterDepartureOffSet("0");
-        newFlight.enterArrivalOffSet("0");
-        newFlight.selectDepartureTerminal("T1");
-        newFlight.selectArrivalTerminal("T1");
+        newFlight.selectDepartureDate(departureDate);
+        newFlight.selectSsrTemplate(ssrTemplate);
+        newFlight.selectDepartureAirport(departureAirport);
+        newFlight.selectArrivalAirport(arrivalAirport);
+        newFlight.enterDepartureTimeHH(departureTimHH);
+        newFlight.enterArrivalTimeHH(arrivalTimeHH);
+        newFlight.enterDepartureTimeMM(departureTimMM);
+        newFlight.enterArrivalTimeMM(arrivalTimeMM);
+        newFlight.enterDepartureOffSet(departureOffset);
+        newFlight.enterArrivalOffSet(arrivalOffset);
+        newFlight.selectDepartureTerminal(departureTerminal);
+        newFlight.selectArrivalTerminal(arrivalTerminal);
         newFlight.clicksaveButton();
+        newFlight.validateMessage();
 
 
     }
@@ -150,7 +174,7 @@ public class TestRunner extends Utils {
 
     }
 
-    @Test(priority = 6, retryAnalyzer = Retry.class)
+    @Test(dependsOnMethods = {"LogInToTheDCS"}, priority = 6, retryAnalyzer = Retry.class)
     public void LogOut() {
         MainMenu newMainMenu = PageFactory.initElements(driver, MainMenu.class);
         newMainMenu.clickMainMenuLink();

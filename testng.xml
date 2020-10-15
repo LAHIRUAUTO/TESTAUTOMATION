@@ -15,14 +15,14 @@
         <parameter name="browser" value="Chrome"/>
         <classes>
             <class name="TestRunner">
-            <!--<methods>
+            <methods>
                 <include name="LogInToTheDCS"/>
                 <include name="GotoMainMenu"/>
                 <include name="createFlight"/>
                 <exclude name="GotoDashBoard"/>
                 <exclude name="LoadFlightToCheckIn"/>
                 <exclude name="LogOut"/>
-            </methods>-->
+            </methods>
             </class>
         </classes>
     </test>
@@ -30,14 +30,14 @@
         <parameter name="browser" value="Firefox"/>
         <classes>
             <class name="TestRunner">
-                <!--<methods>
+                <methods>
                     <include name="LogInToTheDCS"/>
                     <include name="GotoMainMenu"/>
                     <include name="goToFlights"/>
                     <include name="GotoDashBoard"/>
                     <include name="LoadFlightToCheckIn"/>
                     <include name="LogOut"/>
-                </methods>-->
+                </methods>
             </class>
         </classes>
     </test>

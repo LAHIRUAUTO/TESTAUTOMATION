@@ -31,6 +31,7 @@ public  class FlightsObject extends Utils {
     public String departureTerminalLocator = "//*[@id=\"legDeptTerminal\"]\n";
     public String arrivalTerminalLocator = "//*[@id=\"legArrTerminal\"]";
     public String saveButtonLocator = "/html/body/app-root/div/div[1]/app-flight-base/pl-flight/div[2]/div/div/button[9]\n";
+    public String messageOutputLocator = "/html/body/toast-container/div/div/div[2]/span\n";
 
 
 

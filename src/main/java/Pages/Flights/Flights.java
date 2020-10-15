@@ -133,7 +133,11 @@ public class Flights extends FlightsObject {
     public void clicksaveButton() {
         waitElementClickable(saveButtonLocator);
         elementByXpath(saveButtonLocator).click();
-        elementByXpath(saveButtonLocator).click();
+    }
+
+    public void validateMessage (){
+        waitElementVisible(messageOutputLocator);
+        System.out.println("Message output: " + elementByXpath(messageOutputLocator).getText());
     }
 
 }
