@@ -6,15 +6,15 @@ import org.openqa.selenium.WebElement;
 
 import java.util.List;
 
-public class Flights extends FlightsObject {
+public class FlightCreate extends FlightsObject {
 
 
     public void gotoFlightManagerLink() {
 
         mouseHover(elementByXpath(flightManagerLocator));
-
-
     }
+
+
 
     public void clickFlight() {
 

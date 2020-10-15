@@ -5,6 +5,7 @@ import Utilities.Utils;
 
 public  class FlightsObject extends Utils {
 
+    //Flight Creation
     public String flightManagerLocator = "/html/body/app-root/div/pl-top-menu/nav/div/div[2]/ul/li[2]/a\n";
     public String flightsLocator = "/html/body/app-root/div/pl-top-menu/nav/div/div[2]/ul/li[2]/ul/li[1]/a/span[1]\n";
     public String wrapper = "/html/body/app-root/div/pl-top-menu/div";
@@ -32,6 +33,10 @@ public  class FlightsObject extends Utils {
     public String arrivalTerminalLocator = "//*[@id=\"legArrTerminal\"]";
     public String saveButtonLocator = "/html/body/app-root/div/div[1]/app-flight-base/pl-flight/div[2]/div/div/button[9]\n";
     public String messageOutputLocator = "/html/body/toast-container/div/div/div[2]/span\n";
+
+    //Flight Edit
+    public String searchFlightNumberLocator = "//*[@id=\"flight-number\"]\n";
+    public String searchButtonLocator = "/html/body/app-root/div/div[1]/app-flight-base/pl-flight-console/div/div/div/div/div[1]/pl-flight-search/div/div/div/form/div[12]/div[2]/button\n";
 
 
 

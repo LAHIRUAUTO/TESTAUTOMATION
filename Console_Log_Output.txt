@@ -2,24 +2,25 @@
 
 
 
-2020 10 15 13:42/: Test suite started 
+2020 10 15 21:09/: Test suite started 
 log4j:ERROR Could not connect to remote log4j server at [localhost]. We will try again later.
 
 
 
 
-Starting ChromeDriver 83.0.4103.61 (94f915a8d7c408b09cc7352161ad592299f384d2-refs/branch-heads/4103@{#561}) on port 1962
+Starting ChromeDriver 83.0.4103.61 (94f915a8d7c408b09cc7352161ad592299f384d2-refs/branch-heads/4103@{#561}) on port 2976
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-Oct 15, 2020 1:42:30 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+Oct 15, 2020 9:09:04 PM org.openqa.selenium.remote.ProtocolHandshake createSession
 INFO: Detected dialect: W3C
 
 
 
 
 
-Test Case Execution Started at: 2020 10 15 13:42/
+
+Test Case Execution Started at: 2020 10 15 21:09/
 
 Test Case: LogInToTheDCS - PASSED
 
@@ -29,7 +30,7 @@ Test Case: LogInToTheDCS - PASSED
 
 
 
-Test Case Execution Started at: 2020 10 15 13:42/
+Test Case Execution Started at: 2020 10 15 21:09/
 
 Test Case: GotoMainMenu - PASSED
 
@@ -39,7 +40,8 @@ Test Case: GotoMainMenu - PASSED
 
 
 
-Test Case Execution Started at: 2020 10 15 13:42/
+Test Case Execution Started at: 2020 10 15 21:09/
+
 
 Test Case: createFlight - SKIPPED
 
@@ -49,10 +51,7 @@ Test Case: createFlight - SKIPPED
 
 
 
-
-Test Case Execution Started at: 2020 10 15 13:42/
-
-Test Case: createFlight - FAILED
+Test Case Execution Started at: 2020 10 15 21:09/
 
 
 
@@ -61,8 +60,8 @@ org.openqa.selenium.ElementNotInteractableException: element not interactable
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'dell-inspiron-5559', ip: '192.168.1.123', os.name: 'Linux', os.arch: 'amd64', os.version: '5.3.0-59-generic', java.version: '11.0.7'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 83.0.4103.97, chrome: {chromedriverVersion: 83.0.4103.61 (94f915a8d7c40..., userDataDir: /tmp/.org.chromium.Chromium...}, goog:chromeOptions: {debuggerAddress: localhost:45417}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
-Session ID: 30bb131528dd08f055c7d74b1e5d65a9
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 83.0.4103.97, chrome: {chromedriverVersion: 83.0.4103.61 (94f915a8d7c40..., userDataDir: /tmp/.org.chromium.Chromium...}, goog:chromeOptions: {debuggerAddress: localhost:43123}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 94971375d4018ff3df1c269d70d8479b
 
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
@@ -76,8 +75,8 @@ Session ID: 30bb131528dd08f055c7d74b1e5d65a9
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
 	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
 	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
-	at Pages.Flights.Flights.clickFlight(Flights.java:21)
-	at TestRunner.createFlight(TestRunner.java:129)
+	at Pages.Flights.FlightCreate.clickFlight(FlightCreate.java:21)
+	at TestRunner.createFlight(TestRunner.java:128)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -92,13 +91,74 @@ Session ID: 30bb131528dd08f055c7d74b1e5d65a9
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
 	at java.base/java.lang.Thread.run(Thread.java:834)
 
+Test Case: createFlight - FAILED
 
 
 
 
 
 
-Test Case Execution Started at: 2020 10 15 13:43/
+
+Test Case Execution Started at: 2020 10 15 21:09/
+
+
+Test Case: editFlight - SKIPPED
+
+
+
+
+
+
+
+Test Case Execution Started at: 2020 10 15 21:09/
+
+
+
+org.openqa.selenium.ElementNotInteractableException: element not interactable
+  (Session info: headless chrome=83.0.4103.97)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'dell-inspiron-5559', ip: '192.168.1.123', os.name: 'Linux', os.arch: 'amd64', os.version: '5.3.0-59-generic', java.version: '11.0.7'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 83.0.4103.97, chrome: {chromedriverVersion: 83.0.4103.61 (94f915a8d7c40..., userDataDir: /tmp/.org.chromium.Chromium...}, goog:chromeOptions: {debuggerAddress: localhost:43123}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 94971375d4018ff3df1c269d70d8479b
+
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
+	at Pages.Flights.FlightCreate.clickFlight(FlightCreate.java:21)
+	at TestRunner.editFlight(TestRunner.java:166)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+	at org.testng.internal.Invoker.retryFailed(Invoker.java:839)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1010)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+
+Test Case: editFlight - FAILED
+
+
+
+
+
+
+
+Test Case Execution Started at: 2020 10 15 21:09/
 
 Test Case: GotoDashBoard - PASSED
 
@@ -108,7 +168,8 @@ Test Case: GotoDashBoard - PASSED
 
 
 
-Test Case Execution Started at: 2020 10 15 13:43/
+Test Case Execution Started at: 2020 10 15 21:09/
+
 
 Test Case: LoadFlightToCheckIn - SKIPPED
 
@@ -118,10 +179,7 @@ Test Case: LoadFlightToCheckIn - SKIPPED
 
 
 
-
-Test Case Execution Started at: 2020 10 15 13:43/
-
-Test Case: LoadFlightToCheckIn - FAILED
+Test Case Execution Started at: 2020 10 15 21:10/
 
 
 
@@ -132,8 +190,8 @@ For documentation on this error, please visit: https://www.seleniumhq.org/except
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'dell-inspiron-5559', ip: '192.168.1.123', os.name: 'Linux', os.arch: 'amd64', os.version: '5.3.0-59-generic', java.version: '11.0.7'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 83.0.4103.97, chrome: {chromedriverVersion: 83.0.4103.61 (94f915a8d7c40..., userDataDir: /tmp/.org.chromium.Chromium...}, goog:chromeOptions: {debuggerAddress: localhost:45417}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
-Session ID: 30bb131528dd08f055c7d74b1e5d65a9
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 83.0.4103.97, chrome: {chromedriverVersion: 83.0.4103.61 (94f915a8d7c40..., userDataDir: /tmp/.org.chromium.Chromium...}, goog:chromeOptions: {debuggerAddress: localhost:43123}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 94971375d4018ff3df1c269d70d8479b
 *** Element info: {Using=xpath, value=/html/body/app-root/div/div[1]/app-home/main/div/div/main/div/section[1]/div/div/div/ngx-slick/div/div/div[1]/h5/a
 }
 
@@ -155,7 +213,7 @@ Session ID: 30bb131528dd08f055c7d74b1e5d65a9
 	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
 	at com.sun.proxy.$Proxy18.click(Unknown Source)
 	at Pages.DcsHome.DcsDashBoard.loadCheckInFlight(DcsDashBoard.java:26)
-	at TestRunner.LoadFlightToCheckIn(TestRunner.java:172)
+	at TestRunner.LoadFlightToCheckIn(TestRunner.java:187)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -170,13 +228,16 @@ Session ID: 30bb131528dd08f055c7d74b1e5d65a9
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
 	at java.base/java.lang.Thread.run(Thread.java:834)
 
+Test Case: LoadFlightToCheckIn - FAILED
 
 
 
 
 
 
-Test Case Execution Started at: 2020 10 15 13:43/
+
+Test Case Execution Started at: 2020 10 15 21:10/
+
 
 Test Case: LogOut - SKIPPED
 
@@ -186,10 +247,7 @@ Test Case: LogOut - SKIPPED
 
 
 
-
-Test Case Execution Started at: 2020 10 15 13:43/
-
-Test Case: LogOut - FAILED
+Test Case Execution Started at: 2020 10 15 21:10/
 
 
 
@@ -198,8 +256,8 @@ org.openqa.selenium.ElementNotInteractableException: element not interactable
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'dell-inspiron-5559', ip: '192.168.1.123', os.name: 'Linux', os.arch: 'amd64', os.version: '5.3.0-59-generic', java.version: '11.0.7'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 83.0.4103.97, chrome: {chromedriverVersion: 83.0.4103.61 (94f915a8d7c40..., userDataDir: /tmp/.org.chromium.Chromium...}, goog:chromeOptions: {debuggerAddress: localhost:45417}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
-Session ID: 30bb131528dd08f055c7d74b1e5d65a9
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 83.0.4103.97, chrome: {chromedriverVersion: 83.0.4103.61 (94f915a8d7c40..., userDataDir: /tmp/.org.chromium.Chromium...}, goog:chromeOptions: {debuggerAddress: localhost:43123}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 94971375d4018ff3df1c269d70d8479b
 
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
@@ -213,8 +271,8 @@ Session ID: 30bb131528dd08f055c7d74b1e5d65a9
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
 	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
 	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
-	at Pages.MainMenu.MainMenu.clickLogOut(MainMenu.java:36)
-	at TestRunner.LogOut(TestRunner.java:182)
+	at Pages.MainMenu.MainMenu.clickLogOut(MainMenu.java:38)
+	at TestRunner.LogOut(TestRunner.java:197)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -229,32 +287,34 @@ Session ID: 30bb131528dd08f055c7d74b1e5d65a9
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
 	at java.base/java.lang.Thread.run(Thread.java:834)
 
+Test Case: LogOut - FAILED
 
 
 
-1    DEBUG [TestNG-test=Chrome Headless Suite-2] freemarker.cache     - Couldn't find template in cache for "Extent.ftl"("en_US", UTF-8, parsed); will try to load it.
-2    DEBUG [TestNG-test=Chrome Headless Suite-2] freemarker.cache     - TemplateLoader.findTemplateSource("Extent_en_US.ftl"): Not found
-3    DEBUG [TestNG-test=Chrome Headless Suite-2] freemarker.cache     - TemplateLoader.findTemplateSource("Extent_en.ftl"): Not found
-3    DEBUG [TestNG-test=Chrome Headless Suite-2] freemarker.cache     - TemplateLoader.findTemplateSource("Extent.ftl"): Found
-4    DEBUG [TestNG-test=Chrome Headless Suite-2] freemarker.cache     - Loading template for "Extent.ftl"("en_US", UTF-8, parsed) from "jar:file:/home/user/.m2/repository/com/relevantcodes/extentreports/2.41.2/extentreports-2.41.2.jar!/com/relevantcodes/extentreports/view/Extent.ftl"
+0    DEBUG [TestNG-test=Chrome Headless Suite-2] freemarker.cache     - Couldn't find template in cache for "Extent.ftl"("en_US", UTF-8, parsed); will try to load it.
+9    DEBUG [TestNG-test=Chrome Headless Suite-2] freemarker.cache     - TemplateLoader.findTemplateSource("Extent_en_US.ftl"): Not found
+12   DEBUG [TestNG-test=Chrome Headless Suite-2] freemarker.cache     - TemplateLoader.findTemplateSource("Extent_en.ftl"): Not found
+13   DEBUG [TestNG-test=Chrome Headless Suite-2] freemarker.cache     - TemplateLoader.findTemplateSource("Extent.ftl"): Found
+13   DEBUG [TestNG-test=Chrome Headless Suite-2] freemarker.cache     - Loading template for "Extent.ftl"("en_US", UTF-8, parsed) from "jar:file:/home/user/.m2/repository/com/relevantcodes/extentreports/2.41.2/extentreports-2.41.2.jar!/com/relevantcodes/extentreports/view/Extent.ftl"
 
 
 
 
 
 
-Starting ChromeDriver 83.0.4103.61 (94f915a8d7c408b09cc7352161ad592299f384d2-refs/branch-heads/4103@{#561}) on port 32716
+Starting ChromeDriver 83.0.4103.61 (94f915a8d7c408b09cc7352161ad592299f384d2-refs/branch-heads/4103@{#561}) on port 13335
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-Oct 15, 2020 1:43:45 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+Oct 15, 2020 9:10:40 PM org.openqa.selenium.remote.ProtocolHandshake createSession
 INFO: Detected dialect: W3C
 
 
 
 
 
-Test Case Execution Started at: 2020 10 15 13:43/
+
+Test Case Execution Started at: 2020 10 15 21:10/
 
 Test Case: LogInToTheDCS - PASSED
 
@@ -264,7 +324,7 @@ Test Case: LogInToTheDCS - PASSED
 
 
 
-Test Case Execution Started at: 2020 10 15 13:43/
+Test Case Execution Started at: 2020 10 15 21:10/
 
 Test Case: GotoMainMenu - PASSED
 
@@ -274,35 +334,55 @@ Test Case: GotoMainMenu - PASSED
 
 
 
-Test Case Execution Started at: 2020 10 15 13:44/
-
+Test Case Execution Started at: 2020 10 15 21:10/
 Message output: Record exists with same Flight data
+
 Test Case: createFlight - PASSED
 
 
 
 
-22396 DEBUG [TestNG-test=Chrome Suite-2] freemarker.cache     - Couldn't find template in cache for "Extent.ftl"("en_US", UTF-8, parsed); will try to load it.
-22397 DEBUG [TestNG-test=Chrome Suite-2] freemarker.cache     - TemplateLoader.findTemplateSource("Extent_en_US.ftl"): Not found
-22397 DEBUG [TestNG-test=Chrome Suite-2] freemarker.cache     - TemplateLoader.findTemplateSource("Extent_en.ftl"): Not found
-22397 DEBUG [TestNG-test=Chrome Suite-2] freemarker.cache     - TemplateLoader.findTemplateSource("Extent.ftl"): Found
-22397 DEBUG [TestNG-test=Chrome Suite-2] freemarker.cache     - Loading template for "Extent.ftl"("en_US", UTF-8, parsed) from "jar:file:/home/user/.m2/repository/com/relevantcodes/extentreports/2.41.2/extentreports-2.41.2.jar!/com/relevantcodes/extentreports/view/Extent.ftl"
+
+
+
+Test Case Execution Started at: 2020 10 15 21:11/
+
+Test Case: editFlight - PASSED
 
 
 
 
 
 
-Oct 15, 2020 1:44:07 PM org.openqa.selenium.remote.DesiredCapabilities firefox
+
+Test Case Execution Started at: 2020 10 15 21:11/
+
+Test Case: LogOut - PASSED
+
+
+
+28250 DEBUG [TestNG-test=Chrome Suite-1] freemarker.cache     - Couldn't find template in cache for "Extent.ftl"("en_US", UTF-8, parsed); will try to load it.
+28250 DEBUG [TestNG-test=Chrome Suite-1] freemarker.cache     - TemplateLoader.findTemplateSource("Extent_en_US.ftl"): Not found
+28250 DEBUG [TestNG-test=Chrome Suite-1] freemarker.cache     - TemplateLoader.findTemplateSource("Extent_en.ftl"): Not found
+28250 DEBUG [TestNG-test=Chrome Suite-1] freemarker.cache     - TemplateLoader.findTemplateSource("Extent.ftl"): Found
+28250 DEBUG [TestNG-test=Chrome Suite-1] freemarker.cache     - Loading template for "Extent.ftl"("en_US", UTF-8, parsed) from "jar:file:/home/user/.m2/repository/com/relevantcodes/extentreports/2.41.2/extentreports-2.41.2.jar!/com/relevantcodes/extentreports/view/Extent.ftl"
+
+
+
+
+
+
+Oct 15, 2020 9:11:07 PM org.openqa.selenium.remote.DesiredCapabilities firefox
 INFO: Using `new FirefoxOptions()` is preferred to `DesiredCapabilities.firefox()`
-Oct 15, 2020 1:44:09 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+Oct 15, 2020 9:11:10 PM org.openqa.selenium.remote.ProtocolHandshake createSession
 INFO: Detected dialect: OSS
 
 
 
 
 
-Test Case Execution Started at: 2020 10 15 13:44/
+
+Test Case Execution Started at: 2020 10 15 21:11/
 
 Test Case: LogInToTheDCS - PASSED
 
@@ -312,7 +392,7 @@ Test Case: LogInToTheDCS - PASSED
 
 
 
-Test Case Execution Started at: 2020 10 15 13:44/
+Test Case Execution Started at: 2020 10 15 21:11/
 
 Test Case: GotoMainMenu - PASSED
 
@@ -322,23 +402,11 @@ Test Case: GotoMainMenu - PASSED
 
 
 
-Test Case Execution Started at: 2020 10 15 13:44/
-
-Test Case: GotoDashBoard - PASSED
+Test Case Execution Started at: 2020 10 15 21:11/
 
 
 
-
-
-
-
-Test Case Execution Started at: 2020 10 15 13:44/
-
-Test Case: LoadFlightToCheckIn - FAILED
-
-
-
-org.openqa.selenium.NoSuchElementException: Unable to locate element: {"method":"xpath","selector":"/html/body/app-root/div/div[1]/app-home/main/div/div/main/div/section[1]/div/div/div/ngx-slick/div/div/div[1]/h5/a\n"}
+org.openqa.selenium.interactions.MoveTargetOutOfBoundsException: Offset within element cannot be scrolled into view: (80, 20.5): https://dcsqa.avtra.com/dcs/#/
 Command duration or timeout: 0 milliseconds
 
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
@@ -353,15 +421,15 @@ Command duration or timeout: 0 milliseconds
 	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy18.click(Unknown Source)
-	at Pages.DcsHome.DcsDashBoard.loadCheckInFlight(DcsDashBoard.java:26)
-	at TestRunner.LoadFlightToCheckIn(TestRunner.java:172)
+	at org.openqa.selenium.remote.RemoteExecuteMethod.execute(RemoteExecuteMethod.java:35)
+	at org.openqa.selenium.remote.RemoteMouse.mouseMove(RemoteMouse.java:89)
+	at org.openqa.selenium.interactions.MoveMouseAction.perform(MoveMouseAction.java:42)
+	at org.openqa.selenium.interactions.CompositeAction.perform(CompositeAction.java:34)
+	at org.openqa.selenium.interactions.Actions$BuiltAction.perform(Actions.java:642)
+	at org.openqa.selenium.interactions.Actions.perform(Actions.java:595)
+	at Utilities.Utils.mouseHover(Utils.java:79)
+	at Pages.Flights.FlightCreate.gotoFlightManagerLink(FlightCreate.java:14)
+	at TestRunner.createFlight(TestRunner.java:127)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -375,13 +443,16 @@ Command duration or timeout: 0 milliseconds
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
 	at java.base/java.lang.Thread.run(Thread.java:834)
-Caused by: org.openqa.selenium.NoSuchElementException: Unable to locate element: {"method":"xpath","selector":"/html/body/app-root/div/div[1]/app-home/main/div/div/main/div/section[1]/div/div/div/ngx-slick/div/div/div[1]/h5/a\n"}
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Caused by: org.openqa.selenium.interactions.MoveTargetOutOfBoundsException: Offset within element cannot be scrolled into view: (80, 20.5): https://dcsqa.avtra.com/dcs/#/
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'dell-inspiron-5559', ip: '192.168.1.123', os.name: 'Linux', os.arch: 'amd64', os.version: '5.3.0-59-generic', java.version: '11.0.7'
 Driver info: driver.version: unknown
-	at <anonymous class>.FirefoxDriver.prototype.findElementInternal_(file:///tmp/anonymous5134029365470205432webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:11878)
-	at <anonymous class>.fxdriver.Timer.prototype.setTimeout/<.notify(file:///tmp/anonymous5134029365470205432webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:918)
+	at <anonymous class>.FirefoxDriver.prototype.mouseMoveTo(file:///tmp/anonymous7863059307269792372webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:12151)
+	at <anonymous class>.DelayedCommand.prototype.executeInternal_/k(file:///tmp/anonymous7863059307269792372webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:13388)
+	at <anonymous class>.DelayedCommand.prototype.executeInternal_(file:///tmp/anonymous7863059307269792372webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:13393)
+	at <anonymous class>.DelayedCommand.prototype.execute/<(file:///tmp/anonymous7863059307269792372webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:13335)
+
+Test Case: createFlight - FAILED
 
 
 
@@ -389,9 +460,65 @@ Driver info: driver.version: unknown
 
 
 
-Test Case Execution Started at: 2020 10 15 13:44/
+Test Case Execution Started at: 2020 10 15 21:11/
 
-Test Case: LogOut - FAILED
+
+
+org.openqa.selenium.interactions.MoveTargetOutOfBoundsException: Offset within element cannot be scrolled into view: (80, 20.5): https://dcsqa.avtra.com/dcs/#/
+Command duration or timeout: 0 milliseconds
+
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
+	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteExecuteMethod.execute(RemoteExecuteMethod.java:35)
+	at org.openqa.selenium.remote.RemoteMouse.mouseMove(RemoteMouse.java:89)
+	at org.openqa.selenium.interactions.MoveMouseAction.perform(MoveMouseAction.java:42)
+	at org.openqa.selenium.interactions.CompositeAction.perform(CompositeAction.java:34)
+	at org.openqa.selenium.interactions.Actions$BuiltAction.perform(Actions.java:642)
+	at org.openqa.selenium.interactions.Actions.perform(Actions.java:595)
+	at Utilities.Utils.mouseHover(Utils.java:79)
+	at Pages.Flights.FlightCreate.gotoFlightManagerLink(FlightCreate.java:14)
+	at TestRunner.editFlight(TestRunner.java:165)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: org.openqa.selenium.interactions.MoveTargetOutOfBoundsException: Offset within element cannot be scrolled into view: (80, 20.5): https://dcsqa.avtra.com/dcs/#/
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'dell-inspiron-5559', ip: '192.168.1.123', os.name: 'Linux', os.arch: 'amd64', os.version: '5.3.0-59-generic', java.version: '11.0.7'
+Driver info: driver.version: unknown
+	at <anonymous class>.FirefoxDriver.prototype.mouseMoveTo(file:///tmp/anonymous7863059307269792372webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:12151)
+	at <anonymous class>.DelayedCommand.prototype.executeInternal_/k(file:///tmp/anonymous7863059307269792372webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:13388)
+	at <anonymous class>.DelayedCommand.prototype.executeInternal_(file:///tmp/anonymous7863059307269792372webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:13393)
+	at <anonymous class>.DelayedCommand.prototype.execute/<(file:///tmp/anonymous7863059307269792372webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:13335)
+
+Test Case: editFlight - FAILED
+
+
+
+
+
+
+
+Test Case Execution Started at: 2020 10 15 21:11/
 
 
 
@@ -417,8 +544,8 @@ Command duration or timeout: 0 milliseconds
 	at org.openqa.selenium.interactions.Actions$BuiltAction.perform(Actions.java:642)
 	at org.openqa.selenium.interactions.Actions.perform(Actions.java:595)
 	at Utilities.Utils.mouseHover(Utils.java:79)
-	at Pages.MainMenu.MainMenu.gotoLogOutButtonLink(MainMenu.java:29)
-	at TestRunner.LogOut(TestRunner.java:181)
+	at Pages.MainMenu.MainMenu.gotoLogOutButtonLink(MainMenu.java:31)
+	at TestRunner.LogOut(TestRunner.java:196)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -436,19 +563,20 @@ Caused by: org.openqa.selenium.interactions.MoveTargetOutOfBoundsException: Offs
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'dell-inspiron-5559', ip: '192.168.1.123', os.name: 'Linux', os.arch: 'amd64', os.version: '5.3.0-59-generic', java.version: '11.0.7'
 Driver info: driver.version: unknown
-	at <anonymous class>.FirefoxDriver.prototype.mouseMoveTo(file:///tmp/anonymous5134029365470205432webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:12151)
-	at <anonymous class>.DelayedCommand.prototype.executeInternal_/k(file:///tmp/anonymous5134029365470205432webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:13388)
-	at <anonymous class>.DelayedCommand.prototype.executeInternal_(file:///tmp/anonymous5134029365470205432webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:13393)
-	at <anonymous class>.DelayedCommand.prototype.execute/<(file:///tmp/anonymous5134029365470205432webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:13335)
+	at <anonymous class>.FirefoxDriver.prototype.mouseMoveTo(file:///tmp/anonymous7863059307269792372webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:12151)
+	at <anonymous class>.DelayedCommand.prototype.executeInternal_/k(file:///tmp/anonymous7863059307269792372webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:13388)
+	at <anonymous class>.DelayedCommand.prototype.executeInternal_(file:///tmp/anonymous7863059307269792372webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:13393)
+	at <anonymous class>.DelayedCommand.prototype.execute/<(file:///tmp/anonymous7863059307269792372webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:13335)
+
+Test Case: LogOut - FAILED
 
 
 
-
-59755 DEBUG [TestNG-test=Firefox Suite-1] freemarker.cache     - Couldn't find template in cache for "Extent.ftl"("en_US", UTF-8, parsed); will try to load it.
-59755 DEBUG [TestNG-test=Firefox Suite-1] freemarker.cache     - TemplateLoader.findTemplateSource("Extent_en_US.ftl"): Not found
-59755 DEBUG [TestNG-test=Firefox Suite-1] freemarker.cache     - TemplateLoader.findTemplateSource("Extent_en.ftl"): Not found
-59756 DEBUG [TestNG-test=Firefox Suite-1] freemarker.cache     - TemplateLoader.findTemplateSource("Extent.ftl"): Found
-59756 DEBUG [TestNG-test=Firefox Suite-1] freemarker.cache     - Loading template for "Extent.ftl"("en_US", UTF-8, parsed) from "jar:file:/home/user/.m2/repository/com/relevantcodes/extentreports/2.41.2/extentreports-2.41.2.jar!/com/relevantcodes/extentreports/view/Extent.ftl"
+52747 DEBUG [TestNG-test=Firefox Suite-1] freemarker.cache     - Couldn't find template in cache for "Extent.ftl"("en_US", UTF-8, parsed); will try to load it.
+52747 DEBUG [TestNG-test=Firefox Suite-1] freemarker.cache     - TemplateLoader.findTemplateSource("Extent_en_US.ftl"): Not found
+52747 DEBUG [TestNG-test=Firefox Suite-1] freemarker.cache     - TemplateLoader.findTemplateSource("Extent_en.ftl"): Not found
+52747 DEBUG [TestNG-test=Firefox Suite-1] freemarker.cache     - TemplateLoader.findTemplateSource("Extent.ftl"): Found
+52747 DEBUG [TestNG-test=Firefox Suite-1] freemarker.cache     - Loading template for "Extent.ftl"("en_US", UTF-8, parsed) from "jar:file:/home/user/.m2/repository/com/relevantcodes/extentreports/2.41.2/extentreports-2.41.2.jar!/com/relevantcodes/extentreports/view/Extent.ftl"
 
 
 
@@ -484,6 +612,9 @@ java.lang.IllegalStateException: The driver executable does not exist: /home/use
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
 	at java.base/java.lang.Thread.run(Thread.java:834)
 
+
+
+
 Test Case: LogInToTheDCS - SKIPPED
 
 
@@ -493,6 +624,10 @@ Test Case: GotoMainMenu - SKIPPED
 
 
 Test Case: createFlight - SKIPPED
+
+
+
+Test Case: editFlight - SKIPPED
 
 
 
@@ -508,12 +643,9 @@ Test Case: LogOut - SKIPPED
 
 
 
-
-
-
 ===============================================
 DCS TEST SUITE
-Total tests run: 23, Failures: 5, Skips: 9
+Total tests run: 28, Failures: 7, Skips: 11
 Configuration Failures: 1, Skips: 5
 ===============================================
 
