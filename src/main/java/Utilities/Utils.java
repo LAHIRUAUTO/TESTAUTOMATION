@@ -9,7 +9,9 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
 
@@ -60,6 +62,16 @@ public class Utils extends BrowserBase {
     public void selectelementByText(WebElement element, String text) {
         Select select = new Select(element);
         select.selectByVisibleText(text);
+    }
+
+    public void waitElementVisible(String xpath) {
+        WebDriverWait explicitwait = new WebDriverWait(driver,5);
+        explicitwait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath)));
+    }
+
+    public void waitElementClickable(String xpath) {
+        WebDriverWait explicitwait = new WebDriverWait(driver,5);
+        explicitwait.until(ExpectedConditions.elementToBeClickable(By.xpath(xpath)));
     }
 
     public void mouseHover(WebElement element) {

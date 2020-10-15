@@ -10,8 +10,8 @@ import jxl.read.biff.BiffException;
 import org.openqa.selenium.logging.LogEntries;
 import org.openqa.selenium.logging.LogType;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.Assert;
 import org.testng.annotations.Test;
+
 import java.io.FileInputStream;
 import java.io.IOException;
 
@@ -37,19 +37,9 @@ public class TestRunner extends Utils {
         String password = DcsLogginSh.getCell("B2").getContents();
 
         LoginPage newloginpage = PageFactory.initElements(driver, LoginPage.class);
-        MainMenu newMainMenu = PageFactory.initElements(driver, MainMenu.class);
-
         newloginpage.enterUsername(username);
         newloginpage.enterPassword(password);
         newloginpage.clicklogInButton();
-            /*newMainMenu.clickMainMenuLink();
-            newMainMenu.gotoLogOutButtonLink();
-            newMainMenu.clickLogOut();*/
-        currerntThreadId();
-        //System.out.println("Login method thread id:" +Thread.currentThread().getId());
-        Assert.assertEquals(driver.getCurrentUrl(), "https://dcsqa.avtra.com/dcs/#/login/en/IR");
-
-
     }
 
 
@@ -116,27 +106,28 @@ public class TestRunner extends Utils {
         newFlight.clickFlight();
         newFlight.clickWrapper();
         newFlight.clickAddFlight();
-        Thread.sleep(2000);
-        newFlight.selectTimeMode();
-        newFlight.selectOperationType();
-        newFlight.selecrAircraftModel();
-        newFlight.enterFlightNumber();
-        newFlight.selectSeatMap();
-        newFlight.selectOperatedBy();
-        newFlight.selectFlightType();
-        newFlight.selectAircradtTail();
+        newFlight.selectTimeMode("UTC");
+        newFlight.selectOperationType("Charter");
+        newFlight.selecrAircraftModel("300B4-605R-J18Y243");
+        newFlight.enterFlightNumber("3003");
+        newFlight.selectSeatMap("SEAT300B4605RJ18Y243");
+        newFlight.selectOperatedBy("IR");
+        newFlight.selectFlightType("Domestic");
+        newFlight.selectAircradtTail("EP-IBB");
         newFlight.openCallender();
-        newFlight.selectDepartureDate();
-        newFlight.selectSsrTemplate();
-        newFlight.selectDepartureAirport();
-        newFlight.selectArrivalAirport();
-        newFlight.enterDepartureTimeHH();
-        newFlight.enterArrivalTimeHH();
-        newFlight.enterDepartureTimeMM();
-        newFlight.enterArrivalTimeMM();
-        newFlight.enterDepartureOffSet();
-        newFlight.enterArrivalOffSet();
-        //newFlight.clicksaveButton();
+        newFlight.selectDepartureDate("25");
+        newFlight.selectSsrTemplate("SSR300B4605RJ18Y243");
+        newFlight.selectDepartureAirport("IKA");
+        newFlight.selectArrivalAirport("IST");
+        newFlight.enterDepartureTimeHH("06");
+        newFlight.enterArrivalTimeHH("08");
+        newFlight.enterDepartureTimeMM("00");
+        newFlight.enterArrivalTimeMM("30");
+        newFlight.enterDepartureOffSet("0");
+        newFlight.enterArrivalOffSet("0");
+        newFlight.selectDepartureTerminal("T1");
+        newFlight.selectArrivalTerminal("T1");
+        newFlight.clicksaveButton();
 
 
     }

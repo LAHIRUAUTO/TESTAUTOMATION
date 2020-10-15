@@ -6,129 +6,134 @@ import org.openqa.selenium.WebElement;
 
 import java.util.List;
 
-public class Flights extends FlightsObject{
+public class Flights extends FlightsObject {
 
 
-
-
-    public void gotoFlightManagerLink (){
+    public void gotoFlightManagerLink() {
 
         mouseHover(elementByXpath(flightManagerLocator));
 
 
     }
 
-    public void clickFlight (){
+    public void clickFlight() {
 
         elementByXpath(flightsLocator).click();
     }
-    
-    public void clickWrapper (){
+
+    public void clickWrapper() {
         elementByXpath(wrapper).click();
     }
-    
-    public void clickAddFlight (){
+
+    public void clickAddFlight() {
         elementByXpath(addFlightLocator).click();
     }
-    
-    public void selectTimeMode (){
-        selectelementByText(elementByXpath(timeModeLocator) , "UTC");
+
+    public void selectTimeMode(String timeMode) {
+        waitElementClickable(timeModeLocator);
+        selectelementByText(elementByXpath(timeModeLocator), timeMode);
     }
 
-    public void selectOperationType (){
-        selectelementByText(elementByXpath(operationTypeLocator), "Charter");
+    public void selectOperationType(String operationType) {
+        selectelementByText(elementByXpath(operationTypeLocator), operationType);
     }
 
-    public void selecrAircraftModel (){
-        selectelementByText(elementByXpath(aircraftModelLocator), "300B4-605R-J18Y243");
+    public void selecrAircraftModel(String aircraftModel) {
+        selectelementByText(elementByXpath(aircraftModelLocator), aircraftModel);
     }
 
-    public void enterFlightNumber (){
+    public void enterFlightNumber(String flightDesignator) {
         elementByXpath(flightNumberLocator).clear();
-        elementByXpath(flightNumberLocator).sendKeys("3002");
+        elementByXpath(flightNumberLocator).sendKeys(flightDesignator);
     }
 
-    public void selectSeatMap (){
-        selectelementByText(elementByXpath(seatMapLocator), "SEAT300B4605RJ18Y243");
+    public void selectSeatMap(String seatMap) {
+        selectelementByText(elementByXpath(seatMapLocator), seatMap);
     }
 
-    public void selectOperatedBy (){
-        selectelementByText(elementByXpath(operateByLocator), "IR");
+    public void selectOperatedBy(String operatedBy) {
+        selectelementByText(elementByXpath(operateByLocator), operatedBy);
     }
 
-    public void selectFlightType (){
-        selectelementByText(elementByXpath(flightTypeLocator), "Domestic");
+    public void selectFlightType(String flightType) {
+        selectelementByText(elementByXpath(flightTypeLocator), flightType);
     }
 
-    public void selectAircradtTail (){
-        selectelementByText(elementByXpath(aircraftTailLocator), "EP-IBB");
+    public void selectAircradtTail(String aircraftTail) {
+        selectelementByText(elementByXpath(aircraftTailLocator), aircraftTail);
     }
 
-    public void openCallender (){
+    public void openCallender() {
         elementByXpath(callenderLocator).click();
     }
-    
-    public void selectDepartureDate (){
+
+    public void selectDepartureDate(String departureDate) {
 
         WebElement dateWidget = elementByXpath(dateWidgetLocator);
-        List<WebElement> columns=dateWidget.findElements(By.tagName("td"));
-        for (WebElement cell: columns)
-
-        {
-            if (cell.getText().equals("25"))
-            {
+        List<WebElement> columns = dateWidget.findElements(By.tagName("td"));
+        for (WebElement cell : columns) {
+            if (cell.getText().equals(departureDate)) {
                 cell.click();
                 break;
             }
         }
     }
 
-    public void selectSsrTemplate (){
-        selectelementByText(elementByXpath(ssrTemplateLocator), "SSR300B4605RJ18Y243");
+    public void selectSsrTemplate(String ssrTemplate) {
+        selectelementByText(elementByXpath(ssrTemplateLocator), ssrTemplate);
     }
 
-    public void selectDepartureAirport (){
-        selectelementByText(elementByXpath(departureAirportLocator), "IKA");
+    public void selectDepartureAirport(String departureAirport) {
+        selectelementByText(elementByXpath(departureAirportLocator), departureAirport);
     }
 
-    public void selectArrivalAirport (){
-        selectelementByText(elementByXpath(arrivalAirportLocator), "IST");
+    public void selectArrivalAirport(String arrivalAirport) {
+        selectelementByText(elementByXpath(arrivalAirportLocator), arrivalAirport);
     }
 
-    public void enterDepartureTimeHH (){
+    public void enterDepartureTimeHH(String departureTimeHH) {
         elementByXpath(departureTimeHHLocator).clear();
-        elementByXpath(departureTimeHHLocator).sendKeys("06");
+        elementByXpath(departureTimeHHLocator).sendKeys(departureTimeHH);
     }
 
-    public void enterArrivalTimeHH (){
+    public void enterArrivalTimeHH(String arrivvalTimeHH) {
         elementByXpath(arrivalTimeHHLocator).clear();
-        elementByXpath(arrivalTimeHHLocator).sendKeys("08");
+        elementByXpath(arrivalTimeHHLocator).sendKeys(arrivvalTimeHH);
     }
 
-    public void enterDepartureTimeMM (){
+    public void enterDepartureTimeMM(String departureTimeMM) {
         elementByXpath(departurTimeMMLocator).clear();
-        elementByXpath(departurTimeMMLocator).sendKeys("00");
+        elementByXpath(departurTimeMMLocator).sendKeys(departureTimeMM);
     }
 
-    public void enterArrivalTimeMM (){
+    public void enterArrivalTimeMM(String arrivalTimeMM) {
         elementByXpath(arrivalTimeMMLocator).clear();
-        elementByXpath(arrivalTimeMMLocator).sendKeys("30");
+        elementByXpath(arrivalTimeMMLocator).sendKeys(arrivalTimeMM);
     }
 
-    public void enterDepartureOffSet (){
+    public void enterDepartureOffSet(String departureOffset) {
         elementByXpath(departureOffSetLocator).clear();
-        elementByXpath(departureOffSetLocator).sendKeys("0");
+        elementByXpath(departureOffSetLocator).sendKeys(departureOffset);
     }
 
-    public void enterArrivalOffSet (){
+    public void enterArrivalOffSet(String arrivalOffset) {
         elementByXpath(arrivalOffSetLocator).clear();
-        elementByXpath(arrivalOffSetLocator).sendKeys("0");
+        elementByXpath(arrivalOffSetLocator).sendKeys(arrivalOffset);
     }
 
-    public void clicksaveButton (){
+
+    public void selectDepartureTerminal(String departureTerminal) {
+        selectelementByText(elementByXpath(departureTerminalLocator), departureTerminal);
+    }
+
+    public void selectArrivalTerminal(String arrivalTerminal) {
+        selectelementByText(elementByXpath(arrivalTerminalLocator), arrivalTerminal);
+    }
+
+    public void clicksaveButton() {
+        waitElementClickable(saveButtonLocator);
         elementByXpath(saveButtonLocator).click();
         elementByXpath(saveButtonLocator).click();
     }
-
 
 }
