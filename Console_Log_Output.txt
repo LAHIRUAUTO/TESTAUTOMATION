@@ -2,23 +2,22 @@
 
 
 
-2020 10 16 10:36/: Test suite started 
+2020 10 16 19:37/: Test suite started 
 log4j:ERROR Could not connect to remote log4j server at [localhost]. We will try again later.
 
 
-Starting ChromeDriver 83.0.4103.61 (94f915a8d7c408b09cc7352161ad592299f384d2-refs/branch-heads/4103@{#561}) on port 11890
+Starting ChromeDriver 83.0.4103.61 (94f915a8d7c408b09cc7352161ad592299f384d2-refs/branch-heads/4103@{#561}) on port 13521
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-Oct 16, 2020 10:36:29 AM org.openqa.selenium.remote.ProtocolHandshake createSession
+Oct 16, 2020 7:37:08 PM org.openqa.selenium.remote.ProtocolHandshake createSession
 INFO: Detected dialect: W3C
 
 
 
 
 
-
-Test Case Execution Started at: 2020 10 16 10:36/
+Test Case Execution Started at: 2020 10 16 19:37/
 
 Test Case: LogInToTheDCS - PASSED
 
@@ -28,7 +27,7 @@ Test Case: LogInToTheDCS - PASSED
 
 
 
-Test Case Execution Started at: 2020 10 16 10:36/
+Test Case Execution Started at: 2020 10 16 19:37/
 
 Test Case: GotoMainMenu - PASSED
 
@@ -38,9 +37,9 @@ Test Case: GotoMainMenu - PASSED
 
 
 
-Test Case Execution Started at: 2020 10 16 10:36/
-Message output: Record exists with same Flight data
+Test Case Execution Started at: 2020 10 16 19:37/
 
+Message output: Record exists with same Flight data
 Test Case: createFlight - PASSED
 
 
@@ -49,7 +48,7 @@ Test Case: createFlight - PASSED
 
 
 
-Test Case Execution Started at: 2020 10 16 10:36/
+Test Case Execution Started at: 2020 10 16 19:37/
 
 Test Case: searchFlight - PASSED
 
@@ -59,7 +58,7 @@ Test Case: searchFlight - PASSED
 
 
 
-Test Case Execution Started at: 2020 10 16 10:36/
+Test Case Execution Started at: 2020 10 16 19:37/
 
 Test Case: viewFlight - PASSED
 
@@ -69,7 +68,7 @@ Test Case: viewFlight - PASSED
 
 
 
-Test Case Execution Started at: 2020 10 16 10:36/
+Test Case Execution Started at: 2020 10 16 19:37/
 
 Test Case: editFlight - PASSED
 
@@ -79,17 +78,18 @@ Test Case: editFlight - PASSED
 
 
 
-Test Case Execution Started at: 2020 10 16 10:36/
+Test Case Execution Started at: 2020 10 16 19:37/
 
 Test Case: LogOut - PASSED
 
 
 
-0    DEBUG [TestNG-test=Chrome Suite-2] freemarker.cache     - Couldn't find template in cache for "Extent.ftl"("en_US", UTF-8, parsed); will try to load it.
-2    DEBUG [TestNG-test=Chrome Suite-2] freemarker.cache     - TemplateLoader.findTemplateSource("Extent_en_US.ftl"): Not found
-3    DEBUG [TestNG-test=Chrome Suite-2] freemarker.cache     - TemplateLoader.findTemplateSource("Extent_en.ftl"): Not found
-4    DEBUG [TestNG-test=Chrome Suite-2] freemarker.cache     - TemplateLoader.findTemplateSource("Extent.ftl"): Found
-4    DEBUG [TestNG-test=Chrome Suite-2] freemarker.cache     - Loading template for "Extent.ftl"("en_US", UTF-8, parsed) from "jar:file:/home/user/.m2/repository/com/relevantcodes/extentreports/2.41.2/extentreports-2.41.2.jar!/com/relevantcodes/extentreports/view/Extent.ftl"
+
+0    DEBUG [TestNG-test=Chrome Suite-1] freemarker.cache     - Couldn't find template in cache for "Extent.ftl"("en_US", UTF-8, parsed); will try to load it.
+3    DEBUG [TestNG-test=Chrome Suite-1] freemarker.cache     - TemplateLoader.findTemplateSource("Extent_en_US.ftl"): Not found
+4    DEBUG [TestNG-test=Chrome Suite-1] freemarker.cache     - TemplateLoader.findTemplateSource("Extent_en.ftl"): Not found
+6    DEBUG [TestNG-test=Chrome Suite-1] freemarker.cache     - TemplateLoader.findTemplateSource("Extent.ftl"): Found
+6    DEBUG [TestNG-test=Chrome Suite-1] freemarker.cache     - Loading template for "Extent.ftl"("en_US", UTF-8, parsed) from "jar:file:/home/user/.m2/repository/com/relevantcodes/extentreports/2.41.2/extentreports-2.41.2.jar!/com/relevantcodes/extentreports/view/Extent.ftl"
 
 
 

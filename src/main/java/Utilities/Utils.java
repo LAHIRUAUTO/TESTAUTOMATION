@@ -167,8 +167,9 @@ public class Utils extends BrowserBase {
 
     @AfterSuite
     public static void endSuite() throws MessagingException {
+        //ZipUtils.creatZipFile();
+        TestReportSender.sendPDFReportByGMail("dcs.selenium.report@gmail.com", "1Slite0614", "vikasithasouth@gmail.com", "DCS Selenium Test Result", "Dear Mr Vikasitha,");
 
-        //Utils.sendEmail("proavostest@gmail.com", "vikasithasouth@gmail.com", "Test Email Attachment", "Test Email Attachment");
+    }
     }
 
-}

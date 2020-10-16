@@ -95,7 +95,7 @@ public class TestRunner extends Utils {
     }*/
 
     @Test(dependsOnMethods = {"LogInToTheDCS"}, priority = 2, retryAnalyzer = Retry.class)
-    public void GotoMainMenu() throws InterruptedException {
+    public void GotoMainMenu()  {
 
         MainMenu newMainMenu = PageFactory.initElements(driver, MainMenu.class);
         newMainMenu.clickMainMenuLink();
@@ -103,7 +103,7 @@ public class TestRunner extends Utils {
     }
 
     @Test(dependsOnMethods = {"LogInToTheDCS", "GotoMainMenu"}, priority = 3, enabled = true, retryAnalyzer = Retry.class)
-    public void createFlight() throws InterruptedException {
+    public void createFlight()  {
         String timeMode = CreateFlight.getCell("B2").getContents();
         String operationType = CreateFlight.getCell("B3").getContents();
         String aircraftModel = CreateFlight.getCell("B4").getContents();
@@ -196,7 +196,7 @@ public class TestRunner extends Utils {
     }
 
     @Test(dependsOnMethods = {"LogInToTheDCS", "GotoDashBoard"}, priority = 8, retryAnalyzer = Retry.class)
-    public void LoadFlightToCheckIn() throws InterruptedException {
+    public void LoadFlightToCheckIn()  {
 
         String flightDesignator = DashBoardSh.getCell("A2").getContents();
         DcsDashBoard newDashBoard = PageFactory.initElements(driver, DcsDashBoard.class);
