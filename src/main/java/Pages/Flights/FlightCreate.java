@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 
 import java.util.List;
 
-public class FlightCreate extends FlightsObject {
+public class FlightCreate extends Objects_Flight {
 
 
     public void gotoFlightManagerLink() {

@@ -1,15 +1,10 @@
 package Pages.Flights;
 
-public class FlightEdit extends FlightsObject {
+public class FlightEdit extends Objects_Flight {
 
-    public void searByFlightNumber (String flightDesignator){
-        waitElementVisible(searchFlightNumberLocator);
-        elementByXpath(searchFlightNumberLocator).clear();
-        elementByXpath(searchFlightNumberLocator).sendKeys(flightDesignator);
+    public void editFlight (){
+        waitElementClickable(editFlightButtonLocator);
+        elementByXpath(editFlightButtonLocator).click();
     }
 
-    public void searchResult (){
-        waitElementClickable(searchButtonLocator);
-        elementByXpath(searchButtonLocator).click();
-    }
 }

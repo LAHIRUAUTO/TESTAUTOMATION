@@ -1,6 +1,8 @@
 import Pages.DcsHome.DcsDashBoard;
 import Pages.Flights.FlightCreate;
 import Pages.Flights.FlightEdit;
+import Pages.Flights.FlightSearch;
+import Pages.Flights.FlightView;
 import Pages.HomePage.LoginPage;
 import Pages.MainMenu.MainMenu;
 import Utilities.Retry;
@@ -29,7 +31,7 @@ public class TestRunner extends Utils {
     Sheet DcsLogginSh = wb.getSheet("DcsLoggin");
     Sheet DashBoardSh = wb.getSheet("DashBoard");
     Sheet CreateFlight = wb.getSheet("Create_Flight");
-    Sheet EditFlight = wb.getSheet("Edit_Flight");
+    Sheet SearchFlight = wb.getSheet("Search_Flight");
 
 
     @Test(priority = 1, retryAnalyzer = Retry.class, description = "DCS Log in test case")
@@ -124,6 +126,7 @@ public class TestRunner extends Utils {
         String arrivalTerminal = CreateFlight.getCell("B21").getContents();
 
         FlightCreate newFlightCreate = PageFactory.initElements(driver, FlightCreate.class);
+
         newFlightCreate.gotoFlightManagerLink();
         newFlightCreate.clickFlight();
         newFlightCreate.clickWrapper();
@@ -154,31 +157,45 @@ public class TestRunner extends Utils {
     }
 
     @Test(dependsOnMethods = {"LogInToTheDCS", "GotoMainMenu"}, priority = 4, retryAnalyzer = Retry.class)
-    public void editFlight (){
+    public void searchFlight (){
         MainMenu newMainMenu = PageFactory.initElements(driver, MainMenu.class);
         FlightCreate newFlightCreate = PageFactory.initElements(driver, FlightCreate.class);
-        FlightEdit newFlightedit = PageFactory.initElements(driver, FlightEdit.class);
+        FlightSearch newFlighSearch = PageFactory.initElements(driver, FlightSearch.class);
 
-        String flightNumber = EditFlight.getCell("B5").getContents();
+        String flightNumber = SearchFlight.getCell("B5").getContents();
 
         newMainMenu.clickMainMenuLink();
         newFlightCreate.gotoFlightManagerLink();
         newFlightCreate.clickFlight();
         newFlightCreate.clickWrapper();
-        newFlightedit.searByFlightNumber(flightNumber);
-        newFlightedit.searchResult();
+        newFlighSearch.searByFlightNumber(flightNumber);
+        newFlighSearch.searchResult();
 
 
     }
 
-    @Test(dependsOnMethods = {"LogInToTheDCS"}, priority = 5, retryAnalyzer = Retry.class)
+    @Test(dependsOnMethods = {"LogInToTheDCS", "GotoMainMenu", "searchFlight"}, priority = 5, retryAnalyzer = Retry.class)
+    public void viewFlight ()  {
+
+        FlightView newFlighView = PageFactory.initElements(driver, FlightView.class);
+        newFlighView.viewFlight();
+    }
+
+    @Test (dependsOnMethods = {"LogInToTheDCS", "GotoMainMenu", "searchFlight", "viewFlight"}, priority = 6, retryAnalyzer = Retry.class)
+    public void editFlight ()  {
+
+        FlightEdit newFlighEdit = PageFactory.initElements(driver, FlightEdit.class);
+        newFlighEdit.editFlight();
+    }
+
+    @Test(dependsOnMethods = {"LogInToTheDCS"}, priority = 7, retryAnalyzer = Retry.class)
     public void GotoDashBoard() throws InterruptedException {
         DcsDashBoard newDashBoard = PageFactory.initElements(driver, DcsDashBoard.class);
         newDashBoard.clickDashBoard();
         newDashBoard.checkDashBoardtitle();
     }
 
-    @Test(dependsOnMethods = {"LogInToTheDCS", "GotoDashBoard"}, priority = 6, retryAnalyzer = Retry.class)
+    @Test(dependsOnMethods = {"LogInToTheDCS", "GotoDashBoard"}, priority = 8, retryAnalyzer = Retry.class)
     public void LoadFlightToCheckIn() throws InterruptedException {
 
         String flightDesignator = DashBoardSh.getCell("A2").getContents();
@@ -189,7 +206,7 @@ public class TestRunner extends Utils {
 
     }
 
-    @Test(dependsOnMethods = {"LogInToTheDCS"}, priority = 7, retryAnalyzer = Retry.class)
+    @Test(dependsOnMethods = {"LogInToTheDCS"}, priority = 9, retryAnalyzer = Retry.class)
     public void LogOut() {
         MainMenu newMainMenu = PageFactory.initElements(driver, MainMenu.class);
         newMainMenu.clickMainMenuLink();

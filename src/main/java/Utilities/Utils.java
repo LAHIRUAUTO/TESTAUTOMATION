@@ -79,6 +79,11 @@ public class Utils extends BrowserBase {
         action.moveToElement(element).perform();
     }
 
+    public void doubleClick(WebElement element) {
+        Actions action = new Actions(driver);
+        action.doubleClick(element).perform();
+    }
+
 
     @AfterMethod
 

@@ -5,12 +5,12 @@
     <listeners>
         <listener class-name="Utilities.Log"/>
     </listeners>
-    <test verbose="2" preserve-order="true" name="Chrome Headless Suite">
+    <!--<test verbose="2" preserve-order="true" name="Chrome Headless Suite">
         <parameter name="browser" value="Chromeheadless"/>
         <classes>
             <class name="TestRunner"/>
         </classes>
-    </test>
+    </test>-->
     <test verbose="2" preserve-order="true" name="Chrome Suite">
         <parameter name="browser" value="Chrome"/>
         <classes>
@@ -19,6 +19,8 @@
                 <include name="LogInToTheDCS"/>
                 <include name="GotoMainMenu"/>
                 <include name="createFlight"/>
+                <include name="searchFlight"/>
+                <include name="viewFlight"/>
                 <include name="editFlight"/>
                 <exclude name="GotoDashBoard"/>
                 <exclude name="LoadFlightToCheckIn"/>
@@ -27,7 +29,7 @@
             </class>
         </classes>
     </test>
-    <test verbose="2" preserve-order="true" name="Firefox Suite">
+    <!--<test verbose="2" preserve-order="true" name="Firefox Suite">
         <parameter name="browser" value="Firefox"/>
         <classes>
             <class name="TestRunner">
@@ -42,12 +44,12 @@
                 </methods>
             </class>
         </classes>
-    </test>
-    <test verbose="2" preserve-order="true" name="Opera Suite">
+    </test>-->
+    <!--<test verbose="2" preserve-order="true" name="Opera Suite">
         <parameter name="browser" value="Opera"/>
         <classes>
             <class name="TestRunner">
             </class>
         </classes>
-    </test>
+    </test>-->
 </suite>
