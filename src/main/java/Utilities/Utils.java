@@ -36,7 +36,7 @@ public class Utils extends BrowserBase {
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy MM dd HH:mm/");
         LocalDateTime now = LocalDateTime.now();
         System.out.println(dtf.format(now) + ": Test suite started ");
-        report = new ExtentReports(System.getProperty("user.dir") + "/Extent_Reports/" + dtf.format(now) + "Test_Result.html", true);
+        report = new ExtentReports(System.getProperty("user.dir") + "/Extent_Reports/Test_Result.html", true);
         test = report.startTest("Test Result");
 
     }
@@ -110,7 +110,7 @@ public class Utils extends BrowserBase {
 
                 File source = ts.getScreenshotAs(OutputType.FILE);
 
-                FileUtils.copyFile(source, new File(setProjectPath + "/Screen_Capture_Result/Failure_Screen_Capture/" + driver + dtf.format(now) + result.getName() + ".png"));
+                FileUtils.copyFile(source, new File(setProjectPath + "/Screen_Capture_Result/Failure_Screen_Capture/" + result.getName() + ".png"));
 
                 //System.out.println("Running the Test Case : " + result.getName());
                 //System.out.println("Test Failed Screenshot taken " + result.getName());
@@ -129,7 +129,7 @@ public class Utils extends BrowserBase {
 
                 File source = ts.getScreenshotAs(OutputType.FILE);
 
-                FileUtils.copyFile(source, new File(setProjectPath + "/Screen_Capture_Result/Success_Screen_Capture/" + driver + dtf.format(now) + result.getName() + ".png"));
+                FileUtils.copyFile(source, new File(setProjectPath + "/Screen_Capture_Result/Success_Screen_Capture/" + result.getName() + ".png"));
 
                 //System.out.println("Running the Test Case : " + result.getName());
                 //System.out.println("Test Passed Screenshot taken " + result.getName());
@@ -145,7 +145,7 @@ public class Utils extends BrowserBase {
 
                 File source = ts.getScreenshotAs(OutputType.FILE);
 
-                FileUtils.copyFile(source, new File(setProjectPath + "/Screen_Capture_Result/Skip_Screen_Capture/" + driver + dtf.format(now) + result.getName() + ".png"));
+                FileUtils.copyFile(source, new File(setProjectPath + "/Screen_Capture_Result/Skip_Screen_Capture/"+ result.getName() + ".png"));
 
                 //System.out.println("Running the Test Case : " + result.getName());
                 //System.out.println("Test Skiped Screenshot taken " + result.getName());
@@ -167,8 +167,11 @@ public class Utils extends BrowserBase {
 
     @AfterSuite
     public static void endSuite() throws MessagingException {
-        //ZipUtils.creatZipFile();
-        TestReportSender.sendPDFReportByGMail("dcs.selenium.report@gmail.com", "1Slite0614", "vikasithasouth@gmail.com", "DCS Selenium Test Result", "Dear Mr Vikasitha,");
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy MM dd HH:mm/");
+        LocalDateTime now = LocalDateTime.now();
+        //System.out.println(dtf.format(now));
+        ZipUtils.creatZipFile();
+        TestReportSender.sendPDFReportByGMail("dcs.selenium.report@gmail.com", "1Slite0614", "vikasithasouth@gmail.com", dtf.format(now)+" : DCS Selenium Test Result", "Dear Mr Vikasitha,");
 
     }
     }

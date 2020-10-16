@@ -15,7 +15,7 @@ public class ZipUtils {
     LocalDateTime now = LocalDateTime.now();
 
     private List <String> fileList;
-    private static final String OUTPUT_ZIP_FILE = "Screen_Capture.zip";
+    private static final String OUTPUT_ZIP_FILE = "Screen_Capture_Result.zip";
     private static final String SOURCE_FOLDER = "/home/user/Desktop/Sample_Structure_Test_Automation_Project with Page Factory/Screen_Capture_Result"; // SourceFolder path
 
     public ZipUtils() {
@@ -37,7 +37,6 @@ public class ZipUtils {
             fos = new FileOutputStream(zipFile);
             zos = new ZipOutputStream(fos);
 
-            System.out.println("Output to Zip : " + zipFile);
             FileInputStream in = null;
 
             for (String file: this.fileList) {
@@ -56,7 +55,6 @@ public class ZipUtils {
             }
 
             zos.closeEntry();
-            System.out.println("Folder successfully compressed");
 
         } catch (IOException ex) {
             ex.printStackTrace();

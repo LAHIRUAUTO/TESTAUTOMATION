@@ -52,28 +52,38 @@ public class TestReportSender {
             message.setText(body);
 
             BodyPart objMessageBodyPart = new MimeBodyPart();
+            BodyPart objMessageBodyPart2 = new MimeBodyPart();
 
             objMessageBodyPart.setText(dtf.format(now) + " : Test Result Report Attached");
+            objMessageBodyPart2.setText(dtf.format(now) + " : Test Result Screen Capture Attached");
 
             Multipart multipart = new MimeMultipart();
+            Multipart multipart2 = new MimeMultipart();
 
             multipart.addBodyPart(objMessageBodyPart);
+            multipart2.addBodyPart(objMessageBodyPart2);
 
             objMessageBodyPart = new MimeBodyPart();
+            objMessageBodyPart2 = new MimeBodyPart();
 
 //Set path to the pdf report file
 
-            String filename = "/home/user/Desktop/Sample_Structure_Test_Automation_Project with Page Factory/Extent_Reports/"+dtf.format(now)+"Test_Result.html";
+            String filename = "/home/user/Desktop/Sample_Structure_Test_Automation_Project with Page Factory/Extent_Reports/Test_Result.html";
+            String filename2 = "/home/user/Desktop/Sample_Structure_Test_Automation_Project with Page Factory/Screen_Capture_Result.zip";
 
 //Create data source to attach the file in mail
 
             DataSource source = new FileDataSource(filename);
-
             objMessageBodyPart.setDataHandler(new DataHandler(source));
-
             objMessageBodyPart.setFileName(filename);
-
             multipart.addBodyPart(objMessageBodyPart);
+
+            DataSource source2 = new FileDataSource(filename2);
+            objMessageBodyPart2.setDataHandler(new DataHandler(source2));
+            objMessageBodyPart2.setFileName(filename2);
+            multipart.addBodyPart(objMessageBodyPart2);
+
+
 
             message.setContent(multipart);
 
