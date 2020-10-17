@@ -10,6 +10,7 @@ import Utilities.Utils;
 import jxl.Sheet;
 import jxl.Workbook;
 import jxl.read.biff.BiffException;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.logging.LogEntries;
 import org.openqa.selenium.logging.LogType;
 import org.openqa.selenium.support.PageFactory;
@@ -23,7 +24,9 @@ public class TestRunner extends Utils {
 
 
     public TestRunner() throws IOException, BiffException {
+
     }
+    Logger logger=Logger.getLogger("TestRunner");
 
     String FilePath = "/home/user/Desktop/Sample_Structure_Test_Automation_Project with Page Factory/Test Data/testdata.xls";
     FileInputStream fs = new FileInputStream(FilePath);
@@ -32,6 +35,8 @@ public class TestRunner extends Utils {
     Sheet DashBoardSh = wb.getSheet("DashBoard");
     Sheet CreateFlight = wb.getSheet("Create_Flight");
     Sheet SearchFlight = wb.getSheet("Search_Flight");
+    Sheet EditFlight = wb.getSheet("Edit_Flight");
+
 
 
     @Test(priority = 1, retryAnalyzer = Retry.class, description = "DCS Log in test case")
@@ -45,6 +50,7 @@ public class TestRunner extends Utils {
         newloginpage.enterUsername(username);
         newloginpage.enterPassword(password);
         newloginpage.clicklogInButton();
+        logger.info("Test Case: LogInToTheDCS - Passed");
     }
 
 
@@ -104,6 +110,8 @@ public class TestRunner extends Utils {
 
     @Test(dependsOnMethods = {"LogInToTheDCS", "GotoMainMenu"}, priority = 3, enabled = true, retryAnalyzer = Retry.class)
     public void createFlight()  {
+
+
         String timeMode = CreateFlight.getCell("B2").getContents();
         String operationType = CreateFlight.getCell("B3").getContents();
         String aircraftModel = CreateFlight.getCell("B4").getContents();
@@ -168,6 +176,10 @@ public class TestRunner extends Utils {
         newFlightCreate.gotoFlightManagerLink();
         newFlightCreate.clickFlight();
         newFlightCreate.clickWrapper();
+        newFlighSearch.openCallenderDepFrom();
+        newFlighSearch.selectDepartureDateFrom("20");
+        newFlighSearch.openCallenderDepTo();
+        newFlighSearch.selectDepartureDateTo("20");
         newFlighSearch.searByFlightNumber(flightNumber);
         newFlighSearch.searchResult();
 
@@ -184,8 +196,12 @@ public class TestRunner extends Utils {
     @Test (dependsOnMethods = {"LogInToTheDCS", "GotoMainMenu", "searchFlight", "viewFlight"}, priority = 6, retryAnalyzer = Retry.class)
     public void editFlight ()  {
 
+        String statusOpen = EditFlight.getCell("B2").getContents();
+
         FlightEdit newFlighEdit = PageFactory.initElements(driver, FlightEdit.class);
         newFlighEdit.editFlight();
+        newFlighEdit.selectFlightDepStatus(statusOpen);
+        newFlighEdit.clicksaveButton();
     }
 
     @Test(dependsOnMethods = {"LogInToTheDCS"}, priority = 7, retryAnalyzer = Retry.class)

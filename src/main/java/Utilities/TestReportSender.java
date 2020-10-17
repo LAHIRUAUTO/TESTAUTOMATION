@@ -13,7 +13,7 @@ public class TestReportSender {
 
     static void sendPDFReportByGMail(String from, String pass, String to, String subject, String body) {
 
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy MM dd HH:mm/");
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy MM dd HH:mm");
         LocalDateTime now = LocalDateTime.now();
         //System.out.println(dtf.format(now));
 

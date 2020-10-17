@@ -24,7 +24,7 @@
                 <include name="editFlight"/>
                 <exclude name="GotoDashBoard"/>
                 <exclude name="LoadFlightToCheckIn"/>
-                <include name="LogOut"/>
+                <exclude name="LogOut"/>
             </methods>
             </class>
         </classes>

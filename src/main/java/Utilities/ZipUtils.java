@@ -40,7 +40,6 @@ public class ZipUtils {
             FileInputStream in = null;
 
             for (String file: this.fileList) {
-                System.out.println("File Added : " + file);
                 ZipEntry ze = new ZipEntry(source + File.separator + file);
                 zos.putNextEntry(ze);
                 try {

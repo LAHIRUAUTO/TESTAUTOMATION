@@ -9,10 +9,9 @@ Utilities/Log.class
 Pages/Flights/FlightView.class
 Pages/Flights/Objects_Flight.class
 Pages/DcsHome/DcsDashBoard.class
-Utilities/TestReportSender2.class
-Utilities/TestReportSender$1.class
 Utilities/Utils.class
 Pages/Flights/FlightCreate.class
 Pages/Flights/FlightEdit.class
+Utilities/ZipUtils.class
 Utilities/TestReportSender.class
 Pages/MainMenu/MainMenu.class

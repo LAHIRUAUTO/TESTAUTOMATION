@@ -80,6 +80,6 @@ public class BrowserBase {
     @AfterClass
     public static void close() {
 
-        driver.close();
+        //driver.close();
     }
 }

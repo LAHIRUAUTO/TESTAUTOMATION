@@ -65,12 +65,12 @@ public class Utils extends BrowserBase {
     }
 
     public void waitElementVisible(String xpath) {
-        WebDriverWait explicitwait = new WebDriverWait(driver,5);
+        WebDriverWait explicitwait = new WebDriverWait(driver,10);
         explicitwait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath)));
     }
 
     public void waitElementClickable(String xpath) {
-        WebDriverWait explicitwait = new WebDriverWait(driver,5);
+        WebDriverWait explicitwait = new WebDriverWait(driver,10);
         explicitwait.until(ExpectedConditions.elementToBeClickable(By.xpath(xpath)));
     }
 

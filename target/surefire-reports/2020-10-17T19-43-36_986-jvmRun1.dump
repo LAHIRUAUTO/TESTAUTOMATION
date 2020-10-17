@@ -1,4 +1,4 @@
-# Created at 2020-10-16T15:39:32.848
+# Created at 2020-10-17T19:43:41.611
 java.lang.AbstractMethodError: Receiver class org.apache.maven.surefire.report.PojoStackTraceWriter does not define or inherit an implementation of the resolved method 'abstract java.lang.String smartTrimmedStackTrace()' of interface org.apache.maven.surefire.report.StackTraceWriter.
 	at org.apache.maven.surefire.booter.ForkingRunListener.encode(ForkingRunListener.java:409)
 	at org.apache.maven.surefire.booter.ForkingRunListener.encode(ForkingRunListener.java:393)

@@ -37,12 +37,17 @@ public class Objects_Flight extends Utils {
     //Flight Search
     public String searchFlightNumberLocator = "//*[@id=\"flight-number\"]\n";
     public String searchButtonLocator = "/html/body/app-root/div/div[1]/app-flight-base/pl-flight-console/div/div/div/div/div[1]/pl-flight-search/div/div/div/form/div[12]/div[2]/button\n";
+    public String departureDateFromLocator = "//*[@id=\"departure-date-from\"]\n";
+    public String departureDateToLocator = "//*[@id=\"departure-date-to\"]\n";
 
     //View light
     public String viewFlightLocator = "/html/body/app-root/div/div[1]/app-flight-base/pl-flight-console/div/div/div/div/div[2]/pl-flight-list/div/div/div[1]/div[2]/div/span/div[2]/span\n";
 
     //Edit Flight
     public String editFlightButtonLocator = "/html/body/app-root/div/div[1]/app-flight-base/pl-flight/div[2]/div/div/button[8]\n";
+    public String selectDepartureStatus = "//*[@id=\"departureStatus\"]\n";
+
+    //Save
 
 
 
