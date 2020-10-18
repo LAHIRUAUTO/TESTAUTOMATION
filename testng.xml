@@ -1,20 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="DCS TEST SUITE" thread-count="2" parallel="methods">
-    <parameter name="url" value="https://dcsqa.avtra.com/dcs/#/login/en/IR"/>
+
+
+
     <listeners>
         <listener class-name="Utilities.Log"/>
     </listeners>
     <!--<test verbose="2" preserve-order="true" name="Chrome Headless Suite">
         <parameter name="browser" value="Chromeheadless"/>
         <classes>
-            <class name="TestRunner"/>
+            <class name="DCSTestRunner"/>
         </classes>
     </test>-->
-    <test verbose="2" preserve-order="true" name="Chrome Suite">
+    <test verbose="2" preserve-order="true" name="DCS Chrome Suite">
+        <parameter name="url" value="https://staging.homares.ir/dcs/#/login"/>
         <parameter name="browser" value="Chrome"/>
         <classes>
-            <class name="TestRunner">
+            <class name="DCSTestRunner">
             <methods>
                 <include name="LogInToTheDCS"/>
                 <include name="GotoMainMenu"/>
@@ -29,10 +32,32 @@
             </class>
         </classes>
     </test>
+    <test verbose="2" preserve-order="true" name="PSS Admin Chrome Suite">
+        <parameter name="url" value="https://staging.homares.ir/admin/login#"/>
+        <parameter name="browser" value="Chrome"/>
+        <classes>
+            <class name="PSSTestRunner">
+                <methods>
+                    <include name="LogInToThePSSAdmin"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test verbose="2" preserve-order="true" name="PSS Agent Chrome Suite">
+        <parameter name="url" value="https://staging.homares.ir/agent/login#"/>
+        <parameter name="browser" value="Chrome"/>
+        <classes>
+            <class name="PSSTestRunner">
+                <methods>
+                    <include name="LogInToThePSSAgent"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
     <!--<test verbose="2" preserve-order="true" name="Firefox Suite">
         <parameter name="browser" value="Firefox"/>
         <classes>
-            <class name="TestRunner">
+            <class name="DCSTestRunner">
                 <methods>
                     <include name="LogInToTheDCS"/>
                     <include name="GotoMainMenu"/>
@@ -48,7 +73,7 @@
     <!--<test verbose="2" preserve-order="true" name="Opera Suite">
         <parameter name="browser" value="Opera"/>
         <classes>
-            <class name="TestRunner">
+            <class name="DCSTestRunner">
             </class>
         </classes>
     </test>-->

@@ -121,7 +121,7 @@ Session ID: ef0d7a4ea9a35480b68742981a2afde6
 	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
 	at com.sun.proxy.$Proxy18.click(Unknown Source)
 	at Pages.DcsHome.DcsDashBoard.clickDashBoard(DcsDashBoard.java:8)
-	at TestRunner.GotoDashBoard(TestRunner.java:194)
+	at DCSTestRunner.GotoDashBoard(DCSTestRunner.java:194)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)

@@ -172,7 +172,7 @@ public class Utils extends BrowserBase {
         //System.out.println(dtf.format(now));
         ZipUtils.creatZipFile();
         TestReportSender.sendPDFReportByGMail("dcs.selenium.report@gmail.com", "1Slite0614", "vikasithasouth@gmail.com", dtf.format(now)+" : DCS Selenium Test Result", "Dear Mr Vikasitha,");
-
+        //PNLSender.sendPNLByGMail();
     }
     }
 
